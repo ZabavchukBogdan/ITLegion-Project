@@ -13,6 +13,8 @@ console.log(getCategories());
 console.log(getTopBooks());
 
 
+
+
 import {markupCategoriesList} from './js/categories-list-markup';
 
 const categoriesList = document.querySelector('.sidebar__book-categories-list');
