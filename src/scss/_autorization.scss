@@ -1,0 +1,254 @@
+// Modal window
+.sign_modal_style.selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+
+  background: radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
+}
+
+//Modal box
+.autorization-style {
+  position: relative;
+
+  width: 100vw;
+  height: 384px;
+  padding: 40px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background-color: #f6f6f6;
+  border: 2px solid #111111;
+  border-radius: 18px;
+}
+.autorization-style.dark {
+  background-color: #202024;
+  border-color: #f6f6f6;
+}
+
+@media screen and (min-width: 339px) {
+  .autorization-style {
+    width: 335px;
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .autorization-style {
+    width: 579px;
+    height: 516px;
+    padding: 80px 40px 40px;
+  }
+}
+
+// Form
+.form-autorization-style {
+  width: 295px;
+  height: 272px;
+}
+
+.form-autorization-style.selected {
+  padding-top: 37px;
+}
+
+@media screen and (min-width: 768px) {
+  .form-autorization-style {
+    width: 499px;
+    height: 352px;
+  }
+}
+//Input
+.form-autorization-style input {
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  padding-left: 24px;
+
+  border: 2px solid #111111;
+  border-radius: 40px;
+
+  font-size: 16px;
+  line-height: 1.12;
+
+  color: #111111;
+}
+
+.form-autorization-style input::placeholder {
+  color: #111111;
+}
+
+.form-autorization-style.dark input {
+  background-color: #202024;
+  border-color: #f6f6f6;
+}
+
+.form-autorization-style.dark input::placeholder {
+  color: #f6f6f6;
+}
+
+@media screen and (min-width: 768px) {
+  .form-autorization-style input {
+    width: 100%;
+    height: 64px;
+    padding: 20px;
+    padding-left: 40px;
+
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+// SVG position
+.autorization_svg_box {
+  position: relative;
+  margin-top: 24px;
+}
+
+.autorization_svg_psw,
+.autorization_svg_mail {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+
+  width: 18px;
+  height: 18px;
+}
+
+.autorization_svg_close.dark,
+.autorization_svg_psw.dark,
+.autorization_svg_mail.dark {
+  --color: #f6f6f6;
+}
+
+@media screen and (min-width: 768px) {
+  .autorization_svg_psw,
+  .autorization_svg_mail {
+    width: 28px;
+    height: 28px;
+  }
+
+  .autorization_svg_box {
+    margin-top: 28px;
+  }
+}
+
+//Submit BTN
+.autorization_submit {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+
+  border-width: 0;
+  border-radius: 40px;
+  background-color: #111111;
+
+  font-size: 16px;
+  line-height: 1.12;
+  color: #f3f3f3;
+}
+
+.autorization_submit.dark {
+  background-color: #f6f6f6;
+  color: #202024;
+}
+
+@media screen and (min-width: 768px) {
+  .autorization_submit {
+    margin-top: 40px;
+    padding: 20px;
+
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+// Close BTN
+.autorization_close_btn {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+}
+
+.autorization_svg_close {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 18px;
+  height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .autorization_close_btn {
+    right: 24px;
+    top: 24px;
+
+    width: 28px;
+    height: 28px;
+  }
+  .autorization_svg_close {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+//SIGN UP // SIGN IN bottom links
+
+.autorization_links {
+  margin-top: 24px;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+.autorization_signup_link {
+  margin-right: 20px;
+  color: rgba(17, 17, 17, 0.5);
+}
+.autorization_signin_link {
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.autorization_signup_link.selected,
+.autorization_signin_link.selected {
+  text-decoration-line: underline;
+  color: #4f2ee8;
+}
+
+.autorization_signup_link.dark,
+.autorization_signin_link.dark {
+  color: rgba(246, 246, 246, 0.5);
+}
+.autorization_signup_link.dark.selected,
+.autorization_signin_link.dark.selected {
+  color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
+  .autorization_links {
+    margin-top: 20px;
+
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
