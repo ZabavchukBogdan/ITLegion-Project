@@ -1,28 +1,18 @@
 import refs from './refs';
-import { response } from './all-requests';
 
 export function renderRowGallery(row) {
   return row
     .map(elem =>
       elem.title.length < 17
-        ? `<div class="book-card-wrapper"><a class="overlay link" href="${elem.amazon_product_url}">
         ? `<div class="book-card-wrapper" data-idbook="${elem._id}"><a href="#">
             <img src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/> 
-            <div class="overlay-field">
-              <p class="overlay-text">QUICK VIEW</p>
-            </div>
             <p class="book-name">${elem.title}</p>
             <p class="book-author">${elem.author}</p>
           </a></div>`
-        : `<div class="book-card-wrapper"><a class="overlay link" href="${
-            elem.amazon_product_url
-          }">
+        : `<div class="book-card-wrapper" data-idbook="${elem._id}"><a  href="#">
             <img src="${elem.book_image}" alt="${
             elem.title
           }" height="256" loading="lazy"/> 
-            <div class="overlay-field">
-              <p class="overlay-text">QUICK VIEW</p>
-            </div>
             <p class="book-name">${elem.title
               .split('')
               .slice(0, 17)
@@ -46,13 +36,10 @@ export function renderGalleryCat(books, cat) {
     .splice(idx, idx)
     .join(' ')}</span>`;
   let markUp = '';
-  //console.log(books);
   markUp = renderRowGallery(books);
   refs.mainGalleryEl.classList.add('gal-category');
   refs.mainGalleryEl.insertAdjacentHTML('beforeend', markUp);
 }
-
-// ------------------------
 
 export function renderGallery(books) {
   refs.mainGalleryEl.classList.remove('gal-category');
