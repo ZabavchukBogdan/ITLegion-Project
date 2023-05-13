@@ -6,6 +6,7 @@ export function renderRowGallery(row) {
     .map(elem =>
       elem.title.length < 17
         ? `<div class="book-card-wrapper"><a class="overlay link" href="${elem.amazon_product_url}">
+        ? `<div class="book-card-wrapper" data-idbook="${elem._id}"><a href="#">
             <img src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/> 
             <div class="overlay-field">
               <p class="overlay-text">QUICK VIEW</p>
@@ -32,6 +33,7 @@ export function renderRowGallery(row) {
     .join('');
 }
 
+// функція створення заголовку заголовку групи книг
 export function renderGalleryCat(books, cat) {
   refs.mainGalleryEl.innerHTML = '';
   let idx = Math.trunc(cat.split(' ').length / 2);
