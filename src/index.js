@@ -1,4 +1,7 @@
 
+import fetchBook from './js/shopping-list';
+
+
 import { supportMarkup } from './js/support-ukraine';
 
 supportMarkup();
@@ -32,4 +35,5 @@ getCategories().then(catList => {
         </li>`;
         console.log(err);
     })
+
 
