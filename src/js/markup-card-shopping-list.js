@@ -1,3 +1,11 @@
+const trashIconUrl = new URL('../images/symbol-defs.svg', import.meta.url);
+trashIconUrl.hash = 'icon-trash';
+
+const bookdeskIconUrl = new URL(
+  '../images/shop-bookdesk@1x.jpg',
+  import.meta.url
+);
+
 export function markupBookForShoppingList({
   _id,
   book_image,
@@ -33,7 +41,7 @@ export function markupBookForShoppingList({
     </ul></div>
     <button class="remove-from-shopping-list" data-book-id="${_id}">
       <svg class="remove-icon" width="16" height="16">
-        <use href="./images/symbol-defs.svg#icon-trash"></use>
+        <use href="${trashIconUrl}"></use>
       </svg>
     </button>
     </div>
@@ -43,7 +51,7 @@ export function markupBookForShoppingList({
 export function markupEmptyPage() {
   return `<p class="empty-shopping-list">This page is empty, add some books and proceed to order.</p>
   <img
-    src="./src/images/shop-bookdesk@1x.jpg"
+    src="${bookdeskIconUrl}"
     alt=""
     class="image-empty-shopping-list"
     width="200"

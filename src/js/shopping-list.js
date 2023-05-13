@@ -5,12 +5,7 @@ import {
   markupEmptyPage,
 } from './markup-card-shopping-list';
 
-const iconRemoveBook = require('../images/symbol-defs.svg');
-const imageEmptyShoppingList = require('../images/shop-bookmob@1x.jpg');
-
 const SHOPPING_LIST_KEY = 'shopping_list';
-
-let bookId = [];
 
 function readBookListFromStorage() {
   const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
@@ -61,7 +56,6 @@ function removeBookFromList(id, evt) {
 
 addBookToList('643282b1e85766588626a080');
 addBookToList('643282b1e85766588626a0ba');
-console.log('book list:', readBookListFromStorage());
 
 async function fetchSavedBooks() {
   const list = readBookListFromStorage();
