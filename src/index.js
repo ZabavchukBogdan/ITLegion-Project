@@ -1,3 +1,8 @@
+
+import { supportMarkup } from './js/support-ukraine';
+
+supportMarkup();
+
 import { getCategories, getTopBooks } from './js/all-requests';
 import { createBookCard } from './js/homepage-books-render';
 
@@ -27,3 +32,4 @@ getCategories().then(catList => {
         </li>`;
         console.log(err);
     })
+
