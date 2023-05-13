@@ -32,12 +32,6 @@ function addBookToList(id) {
   }
 }
 
-refs.listContainer.addEventListener('click', function (event) {
-  if (event.target.classList.contains('remove-from-shopping-list')) {
-    removeBookFromList(event.target.dataset.bookId, event);
-  }
-});
-
 function removeBookFromList(id, evt) {
   const parentEl = evt.target.closest('div.wrapper-shopping-list');
   parentEl.remove();
@@ -53,9 +47,6 @@ function removeBookFromList(id, evt) {
     renderEmptyPage();
   }
 }
-
-addBookToList('643282b1e85766588626a080');
-addBookToList('643282b1e85766588626a0ba');
 
 async function fetchSavedBooks() {
   const list = readBookListFromStorage();
@@ -89,3 +80,15 @@ function renderBookById(book) {
 }
 
 export default { addBookToList };
+
+if (refs.listContainer) {
+  refs.listContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('remove-from-shopping-list')) {
+      removeBookFromList(event.target.dataset.bookId, event);
+    }
+  });
+
+  // TODO: remove after development
+  addBookToList('643282b1e85766588626a080');
+  addBookToList('643282b1e85766588626a0ba');
+}

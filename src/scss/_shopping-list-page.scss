@@ -15,17 +15,32 @@
   color: #111111;
 }
 
+@media screen and (min-width: 768px) {
+  .title-shopping-list {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
 .title-shopping-list span {
   color: #4f2ee8;
 }
 
 .wrapper-shopping-list {
+  position: relative;
   display: flex;
   column-gap: 14px;
   padding: 14px;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 365px) {
+  .wrapper-shopping-list {
+    column-gap: 10px;
+    padding: 10px;
+  }
 }
 
 .shopping-list {
@@ -35,33 +50,64 @@
 }
 
 .title-book-shopping-list {
+  display: inline-block;
+  width: 144px;
+  margin-bottom: 4px;
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.04em;
 
   text-transform: uppercase;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #111111;
 }
 
+@media screen and (max-width: 365px) {
+  .title-book-shopping-list {
+    font-size: 13px;
+    width: 100px;
+  }
+}
+
 .category-book-shopping-list {
+  display: inline-block;
+  width: 144px;
+  margin-bottom: 4px;
   font-family: 'DM Sans Regular';
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   color: #b4afaf;
 }
 
+@media screen and (max-width: 365px) {
+  .category-book-shopping-list {
+    width: 110px;
+  }
+}
+
 .description-book-shopping-list {
+  font-family: 'DM Sans Regular';
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
-
   letter-spacing: -0.04em;
+  margin-bottom: 30px;
 
   color: #111111;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
 }
 
 .author-book-shopping-list {
@@ -76,13 +122,43 @@
   color: #b4afaf;
 }
 
-.delete-from-shopping-list {
+.remove-from-shopping-list {
+  position: absolute;
   width: 28px;
   height: 28px;
+  right: 14px;
 
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   background-color: #4f2ee8;
   border-radius: 50%;
-  position: absolute;
+  border: none;
+}
+
+.bottom-wrapper-shopping-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shops-shopping-list {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+@media screen and (max-width: 365px) {
+  .shops-shopping-list {
+    column-gap: 6px;
+  }
+}
+
+.wrapper-img-shopping-list {
+  height: 142px;
+}
+
+.wrapper-img-shopping-list img {
+  height: 100%;
+  border-radius: 8px;
 }
