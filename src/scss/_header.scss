@@ -381,6 +381,15 @@ body.dark,
   color: rgba(255, 255, 255, 0.6);
 }
 
+.dark .modal_book {
+  background-color: var(--dark-body-color);
+  border: 2px solid var(--light-header-bg-color);
+  color: var(--light-header-bg-color);
+  transition: color var(--transition-timing-function),
+    background-color var(--transition-timing-function),
+    border-color var(--transition-timing-function);
+}
+
 .dark .icon-burger,
 .dark .auth__modal-close-icon,
 .dark .form__icon {
