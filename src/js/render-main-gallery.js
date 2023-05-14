@@ -4,20 +4,20 @@ export function renderRowGallery(row) {
   return row
     .map(elem =>
       elem.title.length < 17
-        ? `<div class="book-card-wrapper" data-idbook="${elem._id}"><a href="#">
-            <img src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/> 
-            <p class="book-name">${elem.title}</p>
-            <p class="book-author">${elem.author}</p>
+        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a href="#">
+            <img class="js-target" src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/> 
+            <p class="book-name js-target" >${elem.title}</p>
+            <p class="book-author js-target" >${elem.author}</p>
           </a></div>`
-        : `<div class="book-card-wrapper" data-idbook="${elem._id}"><a  href="#">
-            <img src="${elem.book_image}" alt="${
+        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a  href="#">
+            <img class="js-target" src="${elem.book_image}" alt="${
             elem.title
           }" height="256" loading="lazy"/> 
-            <p class="book-name">${elem.title
+            <p class="book-name js-target" >${elem.title
               .split('')
               .slice(0, 17)
               .join('')}...</p>
-            <p class="book-author">${elem.author}</p>
+            <p class="book-author js-target" >${elem.author}</p>
           </a></div>`
     )
     .join('');
