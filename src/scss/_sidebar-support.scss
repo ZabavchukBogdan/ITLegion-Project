@@ -1,120 +1,158 @@
 .support {
-    max-width: 335px;
-    height: 352px;
-    padding: 24px 58px 20px 40px;
-    display: flex;
-    flex-direction: column;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
-    box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
-    border-radius: 16px;
-    // border: solid 1px tomato;
+  max-width: 335px;
+  height: 352px;
+  padding: 24px 58px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #ffffff 100%
+  );
+  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  border-radius: 16px;
+  // border: solid 1px tomato;
 
+  @media screen and (min-width: 768px) {
+    max-width: none;
+    width: 335px;
+    height: 472px;
+    margin-top: 40px;
 
-    @media screen and (min-width: 768px) {
-        max-width: none;
-        width: 335px;
-        height: 472px;
-        margin-top: 40px;
+    padding: 24px 58px 14px 40px;
+  }
 
-        padding: 24px 58px 14px 40px;
-    }
-
-    @media screen and (min-width: 1440px) {
-        width: 356px;
-        height: 490px;
-        margin-top: 86px;
-        padding: 24px 79px 24px 40px;
-    }
+  @media screen and (min-width: 1440px) {
+    width: 356px;
+    height: 490px;
+    margin-top: 86px;
+    padding: 24px 79px 24px 40px;
+  }
 }
 
 .support-head {
-    margin-bottom: 40px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  
-}
-
-
-.support-title {
-    font-size: 26px;
-    line-height: calc(32 / 28);
-    letter-spacing: -4%;
-    width: 205px;
-    color: var(--dark-border-n-text-color);
-    
+  margin-bottom: 40px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .support-title {
-    font-size: 28px;
-    line-height: calc(32 / 28);
-    color: var(--dark-border-n-text-color);
-   
+  font-size: 26px;
+  line-height: calc(32 / 28);
+  letter-spacing: -4%;
+  width: 205px;
+  color: var(--dark-border-n-text-color);
 }
 
+.support-title {
+  font-size: 28px;
+  line-height: calc(32 / 28);
+  color: var(--dark-border-n-text-color);
+}
 
 .support-icon {
-    fill: #FFFFFF;
-  
+  fill: #ffffff;
 }
+
+// .swiper {
+//   height: 300px;
+//   margin-bottom: 20px;
+//   overflow: hidden;
+
+//   @media screen and (min-width: 768px) {
+//     height: 420px;
+//     margin-bottom: 14px;
+//   }
+
+//   @media screen and (min-width: 1440px) {
+//     height: 428px;
+//     margin-bottom: 24px;
+//   }
+// }
+
+// .support-item {
+//   display: flex;
+//   justify-content: flex-start;
+//   margin-bottom: 20px;
+//   align-items: center;
+// }
+
+// .support-number {
+//   width: 14px;
+//   height: 18px;
+//   color: #ffffff;
+// }
+
+// .support-link {
+//   margin-left: 20px;
+// }
 
 .swiper {
-    height: 300px;
-    margin-bottom: 20px;
-    overflow: hidden;
+  height: 188px;
+  margin-bottom: 16px;
 
-    @media screen and (min-width: 768px) {
-        height: 420px;
-        margin-bottom: 14px;
-    }
+  overflow: hidden;
 
-    @media screen and (min-width: 1440px) {
-        height: 428px;
-        margin-bottom: 24px;
-    }
+  @media screen and (min-width: 768px) {
+    height: 292px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
 }
 
-.support-item {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    align-items: center;
+.support__list-js {
+  display: flex;
+  flex-direction: column;
 }
 
-.support-number {
-    width: 14px;
-    height: 18px;
-    color: #FFFFFF;
+.support__list-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  color: var(--light-header-bg-color);
 }
 
-.support-link {
-    margin-left: 20px;
-}
+.support__link img {
+  height: 51px;
+  width: auto;
 
+  filter: grayscale(100%) invert(50%) brightness(200%);
+}
 
 .support-btn {
-    width: 32px;
-    height: 32px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    @media screen and (min-width: 768px) {
-        width: 38px;
-        height: 38px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .support-btn-icon {
-   fill: #4F2EE8;
-   
+  fill: var(--light-accent-color);
 }
 
-.support-btn:hover {
-    color: #4F2EE8
-}
+//------- HOVER ЗА БАЖАННЯМ, АЛЕ ПРАЦЮЄ НЕПРАВИЛЬНО
+
+// .support-btn-icon:hover {
+//   fill: var(--light-header-bg-color);
+// }
+// .support-btn:hover {
+//   background-color: var(--light-accent-color);
+// }
