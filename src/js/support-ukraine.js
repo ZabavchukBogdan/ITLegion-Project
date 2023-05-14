@@ -2,7 +2,7 @@
 
 
 
-// import { initScrollButton } from './scroll-support';
+import Swiper from 'swiper';
 import { supportArray } from './suport-list';
 
 const supportList = document.querySelector('.js-support-list');
@@ -23,6 +23,8 @@ function markupList(arr) {
 }
 export function supportMarkup() {
   supportList.insertAdjacentHTML('beforeend', markupList(supportArray));
-  // initScrollButton('.swiper', '.support-list');
-}
+ 
+};
+
+
 supportMarkup();

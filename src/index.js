@@ -4,7 +4,7 @@
 import './js/support-ukraine';
 import { supportMarkup } from './js/support-ukraine';
 
-// supportMarkup();
+supportMarkup();
 
 // import { getCategories, getTopBooks } from './js/all-requests';
 // import { createBookCard } from './js/homepage-books-render';
