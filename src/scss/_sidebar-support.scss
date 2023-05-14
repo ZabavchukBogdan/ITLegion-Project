@@ -1,0 +1,111 @@
+.support {
+    max-width: 335px;
+    height: 352px;
+    padding: 24px 58px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+    border-radius: 16px;
+    border: solid 1px tomato;
+
+
+    @media screen and (min-width: 768px) {
+        max-width: none;
+        width: 335px;
+        height: 472px;
+        margin-top: 40px;
+
+        padding: 24px 58px 14px 40px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 356px;
+        height: 490px;
+        margin-top: 86px;
+        margin-left: 24px;
+        padding: 24px 79px 24px 40px;
+    }
+}
+
+// .support-head {
+//     margin-bottom: 40px;
+//     display: flex;
+//     gap: 12px;
+//     align-items: center;
+//     border: solid 1px tomato;
+// }
+
+// .support-title {
+//     font-size: 28px;
+//     line-height: calc(32 / 28);
+//     color: var(--dark-border-n-text-color);
+//     border: solid 1px tomato;
+// }
+
+// .support-icon {
+//     // fill: #FFFFFF;
+//     border: solid 1px tomato;
+// }
+
+.swiper {
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: auto;
+    // border: solid 1px tomato;
+
+    @media screen and (min-width: 768px) {
+        height: 420px;
+        margin-bottom: 14px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 428px;
+        margin-bottom: 24px;
+    }
+}
+
+.support-item {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.support-number {
+    width: 14px;
+    height: 18px;
+    color: #FFFFFF;
+}
+
+.support-link {
+    margin-left: 20px;
+}
+
+
+// .support-btn {
+//     width: 32px;
+//     height: 32px;
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: none;
+//     border-radius: 50%;
+//     background-color: #FFFFFF;
+//     border: solid 1px tomato;
+
+//     @media screen and (min-width: 768px) {
+//         width: 38px;
+//         height: 38px;
+//     }
+// }
+
+// .support-btn-icon {
+//     fill: #4F2EE8;
+//     border: solid 1px tomato;
+// }
+
+// .support-btn:hover {
+//     background-color: #f5f5f5;
+// }
