@@ -385,9 +385,27 @@ body.dark {
 
 .dark .menu__shopping.link,
 .dark .menu__home,
-.dark .menu.list {
+.dark .menu.list,
+.dark .category-title,
+.dark .book-name,
+.dark .button-see-more {
   color: var(--light-header-bg-color);
   transition: color var(--transition-timing-function);
+}
+
+.dark .category-books__title + .category-books__author {
+  color: var(--dark-description-text);
+  transition: color var(--transition-timing-function);
+}
+
+.dark .category {
+  color: var(--light-header-bg-color);
+}
+
+.dark .category-list-item :hover,
+.dark .category-list-item :focus,
+.dark .category.category-active {
+  color: #eac645;
 }
 
 .drop-menu {

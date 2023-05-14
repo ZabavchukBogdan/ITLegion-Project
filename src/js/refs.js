@@ -8,6 +8,6 @@ export default {
   authFormCloseBtn: document.querySelector('.auth-form-close-btn'),
   regFormEl: document.querySelector('.auth-form'),
   supportEl: document.querySelector('.support'),
-   listContainer: document.querySelector('.shopping-list'),
+  listContainer: document.querySelector('.shopping-list'),
   buttonRemoveBook: document.querySelector('.remove-from-shopping-list'),
 };
