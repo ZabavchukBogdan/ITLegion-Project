@@ -65,6 +65,14 @@
   }
 }
 
+.current {
+  color: #111;
+  background: #eac645;
+  border-radius: 36px;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+
 .menu__shopping {
   display: flex;
   gap: 4px;
@@ -367,7 +375,8 @@ input:checked + .slider:before {
 }
 
 ///body////
-body.dark {
+body.dark,
+.dark .container-shopping-list {
   background-color: var(--dark-body-color);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -383,12 +392,15 @@ body.dark {
   fill: #eac645;
 }
 
-.dark .menu__shopping.link,
+.dark .menu__shopping,
 .dark .menu__home,
 .dark .menu.list,
 .dark .category-title,
+.dark .title-shopping-list,
 .dark .book-name,
-.dark .button-see-more {
+.dark .button-see-more,
+.dark .title-book-shopping-list,
+.dark .description-book-shopping-list {
   color: var(--light-header-bg-color);
   transition: color var(--transition-timing-function);
 }
@@ -402,12 +414,19 @@ body.dark {
   color: var(--light-header-bg-color);
 }
 
+.dark .current {
+  color: #111;
+}
+
 .dark .category-list-item :hover,
 .dark .category-list-item :focus,
 .dark .category.category-active {
   color: #eac645;
 }
 
+.dark .wrapper-shopping-list {
+  background-color: var(--light-border-n-text-color);
+}
 .drop-menu {
   display: flex;
   justify-content: center;

@@ -6,11 +6,4 @@ import './js/all-requests';
 import './js/support-ukraine';
 import './js/autorization-modal';
 import './js/categories-list-markup';
-
-
-
-
-
-
-
-
+import './js/header';
