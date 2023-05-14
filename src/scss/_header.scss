@@ -392,8 +392,13 @@ body.dark,
 
 .dark .icon-burger,
 .dark .auth__modal-close-icon,
-.dark .form__icon {
+.dark .form__icon,
+.dark .modal_book-btn-close {
   fill: var(--light-header-bg-color);
+}
+
+.dark .modal_book-svg {
+  stroke: var(--light-header-bg-color);
 }
 
 .dark .menu-toggle :hover,
