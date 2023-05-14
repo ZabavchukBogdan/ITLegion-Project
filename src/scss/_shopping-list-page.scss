@@ -1,8 +1,19 @@
+@media screen and (max-width: 1439px) {
+  .aside-shopping-list {
+    display: none;
+  }
+}
+
 .container-shopping-list {
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f6f6f6;
+}
+
+@media screen and (min-width: 1440px) {
+  .container-shopping-list {
+    padding-left: 40px;
+  }
 }
 
 .title-shopping-list {
@@ -15,17 +26,39 @@
   color: #111111;
 }
 
+@media screen and (min-width: 768px) {
+  .title-shopping-list {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
 .title-shopping-list span {
   color: #4f2ee8;
 }
 
 .wrapper-shopping-list {
+  position: relative;
   display: flex;
   column-gap: 14px;
   padding: 14px;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 365px) {
+  .wrapper-shopping-list {
+    column-gap: 8px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper-shopping-list {
+    column-gap: 24px;
+    padding: 24px;
+  }
 }
 
 .shopping-list {
@@ -35,36 +68,74 @@
 }
 
 .title-book-shopping-list {
+  width: 144px;
+  margin-bottom: 4px;
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.04em;
 
   text-transform: uppercase;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #111111;
 }
 
+@media screen and (max-width: 365px) {
+  .title-book-shopping-list {
+    font-size: 13px;
+    width: 100px;
+  }
+}
+
 .category-book-shopping-list {
+  display: inline-block;
+  width: 144px;
+  margin-bottom: 8px;
   font-family: 'DM Sans Regular';
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   color: #b4afaf;
 }
 
+@media screen and (max-width: 365px) {
+  .category-book-shopping-list {
+    width: 110px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .category-book-shopping-list {
+    margin-bottom: 14px;
+    width: 260px;
+  }
+}
+
 .description-book-shopping-list {
+  font-family: 'DM Sans Regular';
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
-
   letter-spacing: -0.04em;
 
   color: #111111;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
 }
 
 .author-book-shopping-list {
+  position: absolute;
+  bottom: 14px;
   font-family: 'DM Sans Regular';
   font-style: italic;
   font-weight: 400;
@@ -76,13 +147,98 @@
   color: #b4afaf;
 }
 
-.delete-from-shopping-list {
+@media screen and (min-width: 768px) {
+  .author-book-shopping-list {
+    bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .author-book-shopping-list {
+    font-size: 10px;
+  }
+}
+
+.remove-from-shopping-list {
+  position: absolute;
   width: 28px;
   height: 28px;
+  right: 14px;
 
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   background-color: #4f2ee8;
   border-radius: 50%;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .remove-from-shopping-list {
+    top: 24px;
+    right: 24px;
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.shops-shopping-list {
   position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+@media screen and (max-width: 365px) {
+  .shops-shopping-list {
+    column-gap: 4px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shops-shopping-list {
+    bottom: 24px;
+    right: 24px;
+    column-gap: 16px;
+    filter: grayscale(1);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .amazon-image-shopping-list {
+    width: 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .apple-image-shopping-list,
+  .books-image-shopping-list {
+    width: 16px;
+  }
+}
+
+.wrapper-img-shopping-list {
+  width: 100px;
+  height: 142px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper-img-shopping-list {
+    width: 116px;
+    height: 165px;
+  }
+}
+
+.wrapper-img-shopping-list img {
+  height: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .remove-icon {
+    width: 18px;
+    height: 18px;
+  }
 }
