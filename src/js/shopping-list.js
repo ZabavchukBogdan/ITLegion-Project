@@ -1,97 +1,97 @@
-import axios from 'axios';
-import refs from './get-refs-shopping-list';
-import {
-  markupBookForShoppingList,
-  markupEmptyPage,
-} from './markup-card-shopping-list';
+// import axios from 'axios';
+// import refs from './get-refs-shopping-list';
+// import {
+//   markupBookForShoppingList,
+//   markupEmptyPage,
+// } from './markup-card-shopping-list';
 
-const iconRemoveBook = require('../images/symbol-defs.svg');
-const imageEmptyShoppingList = require('../images/shop-bookmob@1x.jpg');
+// const iconRemoveBook = require('../images/symbol-defs.svg');
+// const imageEmptyShoppingList = require('../images/shop-bookmob@1x.jpg');
 
-const SHOPPING_LIST_KEY = 'shopping_list';
+// const SHOPPING_LIST_KEY = 'shopping_list';
 
-let bookId = [];
+// let bookId = [];
 
-function readBookListFromStorage() {
-  const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
+// function readBookListFromStorage() {
+//   const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
 
-  if (listVal) {
-    try {
-      return JSON.parse(listVal);
-    } catch (error) {}
-  }
+//   if (listVal) {
+//     try {
+//       return JSON.parse(listVal);
+//     } catch (error) {}
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
-function addBookToList(id) {
-  if (!id) {
-    return;
-  }
+// function addBookToList(id) {
+//   if (!id) {
+//     return;
+//   }
 
-  const list = readBookListFromStorage();
+//   const list = readBookListFromStorage();
 
-  if (!list.includes(id)) {
-    list.push(id);
-    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
-  }
-}
+//   if (!list.includes(id)) {
+//     list.push(id);
+//     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+//   }
+// }
 
-refs.listContainer.addEventListener('click', function (event) {
-  if (event.target.classList.contains('remove-from-shopping-list')) {
-    removeBookFromList(event.target.dataset.bookId, event);
-  }
-});
+// refs.listContainer.addEventListener('click', function (event) {
+//   if (event.target.classList.contains('remove-from-shopping-list')) {
+//     removeBookFromList(event.target.dataset.bookId, event);
+//   }
+// });
 
-function removeBookFromList(id, evt) {
-  const parentEl = evt.target.closest('div.wrapper-shopping-list');
-  parentEl.remove();
+// function removeBookFromList(id, evt) {
+//   const parentEl = evt.target.closest('div.wrapper-shopping-list');
+//   parentEl.remove();
 
-  const list = readBookListFromStorage();
-  if (list.includes(id)) {
-    const idx = list.indexOf(id);
-    list.splice(idx, 1);
-    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
-  }
+//   const list = readBookListFromStorage();
+//   if (list.includes(id)) {
+//     const idx = list.indexOf(id);
+//     list.splice(idx, 1);
+//     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+//   }
 
-  if (list.length === 0) {
-    renderEmptyPage();
-  }
-}
+//   if (list.length === 0) {
+//     renderEmptyPage();
+//   }
+// }
 
-addBookToList('643282b1e85766588626a080');
-addBookToList('643282b1e85766588626a0ba');
-console.log('book list:', readBookListFromStorage());
+// addBookToList('643282b1e85766588626a080');
+// addBookToList('643282b1e85766588626a0ba');
+// console.log('book list:', readBookListFromStorage());
 
-async function fetchSavedBooks() {
-  const list = readBookListFromStorage();
-  const requests = [];
+// async function fetchSavedBooks() {
+//   const list = readBookListFromStorage();
+//   const requests = [];
 
-  for (const bookId of list) {
-    requests.push(
-      axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
-    );
-  }
+//   for (const bookId of list) {
+//     requests.push(
+//       axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
+//     );
+//   }
 
-  const responses = await Promise.all(requests);
+//   const responses = await Promise.all(requests);
 
-  for (const res of responses) {
-    const book = res.data;
-    console.log(book);
-    renderBookById(book);
-  }
-}
+//   for (const res of responses) {
+//     const book = res.data;
+//     console.log(book);
+//     renderBookById(book);
+//   }
+// }
 
-function renderEmptyPage() {
-  const markup = markupEmptyPage();
-  refs.listContainer.innerHTML = markup;
-}
+// function renderEmptyPage() {
+//   const markup = markupEmptyPage();
+//   refs.listContainer.innerHTML = markup;
+// }
 
-fetchSavedBooks();
+// fetchSavedBooks();
 
-function renderBookById(book) {
-  const markup = markupBookForShoppingList(book);
-  refs.listContainer.insertAdjacentHTML('afterbegin', markup);
-}
+// function renderBookById(book) {
+//   const markup = markupBookForShoppingList(book);
+//   refs.listContainer.insertAdjacentHTML('afterbegin', markup);
+// }
 
-export default { addBookToList };
+// export default { addBookToList };
