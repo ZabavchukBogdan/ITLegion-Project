@@ -1,4 +1,7 @@
 
+import './js/darkTheme';
+
+
 import './js/refs';
 import './js/render-main-gallery';
 import './js/all-requests';
