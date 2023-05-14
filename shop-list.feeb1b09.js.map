@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/shop.js"],"sourcesContent":["import './js/darkTheme';\nimport './js/refs';\nimport './js/support-ukraine';\nimport './js/shopping-list';\nimport './js/markup-card-shopping-list';\n\n"],"names":["parcelRequire"],"version":3,"file":"shop-list.feeb1b09.js.map"}
