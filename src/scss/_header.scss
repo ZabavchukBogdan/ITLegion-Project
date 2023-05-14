@@ -381,8 +381,7 @@ body.dark,
   color: rgba(255, 255, 255, 0.6);
 }
 
-.dark .modal,
-.dark .auth__modal {
+.dark .modal_book {
   background-color: var(--dark-body-color);
   border: 2px solid var(--light-header-bg-color);
   color: var(--light-header-bg-color);
