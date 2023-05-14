@@ -1,97 +1,101 @@
-// import axios from 'axios';
-// import refs from './get-refs-shopping-list';
-// import {
-//   markupBookForShoppingList,
-//   markupEmptyPage,
-// } from './markup-card-shopping-list';
+import axios from 'axios';
+import refs from './refs';
+import {
+  markupBookForShoppingList,
+  markupEmptyPage,
+} from './markup-card-shopping-list';
 
-// const iconRemoveBook = require('../images/symbol-defs.svg');
-// const imageEmptyShoppingList = require('../images/shop-bookmob@1x.jpg');
+const iconRemoveBook = require('../images/symbol-defs.svg');
+const imageEmptyShoppingList = require('../images/shop-bookmob@1x.jpg');
 
-// const SHOPPING_LIST_KEY = 'shopping_list';
+const SHOPPING_LIST_KEY = 'shopping_list';
 
-// let bookId = [];
+let bookId = [];
 
-// function readBookListFromStorage() {
-//   const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
 
-//   if (listVal) {
-//     try {
-//       return JSON.parse(listVal);
-//     } catch (error) {}
-//   }
 
-//   return [];
-// }
+function readBookListFromStorage() {
+  const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
 
-// function addBookToList(id) {
-//   if (!id) {
-//     return;
-//   }
+  if (listVal) {
+    try {
+      return JSON.parse(listVal);
+    } catch (error) {}
+  }
 
-//   const list = readBookListFromStorage();
+  return [];
+}
 
-//   if (!list.includes(id)) {
-//     list.push(id);
-//     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
-//   }
-// }
+function addBookToList(id) {
+  if (!id) {
+    return;
+  }
 
-// refs.listContainer.addEventListener('click', function (event) {
-//   if (event.target.classList.contains('remove-from-shopping-list')) {
-//     removeBookFromList(event.target.dataset.bookId, event);
-//   }
-// });
+  const list = readBookListFromStorage();
 
-// function removeBookFromList(id, evt) {
-//   const parentEl = evt.target.closest('div.wrapper-shopping-list');
-//   parentEl.remove();
+  if (!list.includes(id)) {
+    list.push(id);
+    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+  }
+}
 
-//   const list = readBookListFromStorage();
-//   if (list.includes(id)) {
-//     const idx = list.indexOf(id);
-//     list.splice(idx, 1);
-//     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
-//   }
+refs.listContainer.addEventListener('click', function (event) {
+  if (event.target.classList.contains('remove-from-shopping-list')) {
+    removeBookFromList(event.target.dataset.bookId, event);
+  }
+});
 
-//   if (list.length === 0) {
-//     renderEmptyPage();
-//   }
-// }
+function removeBookFromList(id, evt) {
+  const parentEl = evt.target.closest('div.wrapper-shopping-list');
+  parentEl.remove();
 
-// addBookToList('643282b1e85766588626a080');
-// addBookToList('643282b1e85766588626a0ba');
-// console.log('book list:', readBookListFromStorage());
+  const list = readBookListFromStorage();
+  if (list.includes(id)) {
+    const idx = list.indexOf(id);
+    list.splice(idx, 1);
+    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+  }
 
-// async function fetchSavedBooks() {
-//   const list = readBookListFromStorage();
-//   const requests = [];
+  if (list.length === 0) {
+    renderEmptyPage();
+  }
+}
 
-//   for (const bookId of list) {
-//     requests.push(
-//       axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
-//     );
-//   }
+addBookToList('643282b1e85766588626a080');
+addBookToList('643282b1e85766588626a0ba');
+console.log('book list:', readBookListFromStorage());
 
-//   const responses = await Promise.all(requests);
+async function fetchSavedBooks() {
+  const list = readBookListFromStorage();
+  const requests = [];
 
-//   for (const res of responses) {
-//     const book = res.data;
-//     console.log(book);
-//     renderBookById(book);
-//   }
-// }
+  for (const bookId of list) {
+    requests.push(
+      axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
+    );
+  }
 
-// function renderEmptyPage() {
-//   const markup = markupEmptyPage();
-//   refs.listContainer.innerHTML = markup;
-// }
+  const responses = await Promise.all(requests);
 
-// fetchSavedBooks();
+  for (const res of responses) {
+    const book = res.data;
+    console.log(book);
+    renderBookById(book);
+  }
+}
 
-// function renderBookById(book) {
-//   const markup = markupBookForShoppingList(book);
-//   refs.listContainer.insertAdjacentHTML('afterbegin', markup);
-// }
+function renderEmptyPage() {
+  const markup = markupEmptyPage();
+  refs.listContainer.innerHTML = markup;
+}
 
-// export default { addBookToList };
+fetchSavedBooks();
+
+function renderBookById(book) {
+  const markup = markupBookForShoppingList(book);
+  refs.listContainer.insertAdjacentHTML('afterbegin', markup);
+}
+
+export default { addBookToList };
+
+
