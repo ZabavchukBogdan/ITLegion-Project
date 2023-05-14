@@ -11,17 +11,16 @@ import {
 } from './helpers/autorization/autorization-marcup.js';
 
 const modal = document.querySelector('.js_autorization_modal');
-console.log()
 
-// ПРИБРАТИ // кнопка створення форми авторизації
+//  кнопка створення форми авторизації
 const button = document.querySelector('.js_signup_btn');
 button.addEventListener('click', onBtnClick);
 
 function onBtnClick(evt) {
   evt.preventDefault();
   modal.innerHTML = '';
-  modal.classList.add("selected")
-  modal.innerHTML = createMarcupSignUp();
+  modal.classList.add('selected');
+  modal.innerHTML = createMarcupSignUp(themeSet());
   closeModalBtn();
   signUpForm();
 }
@@ -42,7 +41,7 @@ function signUpForm() {
   const signInLink = document.querySelector('.js_signin_link');
 
   const userName = form.children[0];
-  const userEmail = document.querySelector('.autorization_email')
+  const userEmail = document.querySelector('.autorization_email');
   const userPassword = document.querySelector('.autorization_psw');
 
   signUpLink.style.pointerEvents = 'none';
@@ -52,8 +51,9 @@ function signUpForm() {
 
   function signInClick(evt) {
     evt.preventDefault();
+    const theme = themeSet();
     modal.innerHTML = '';
-    modal.innerHTML = createMarcupSignIn();
+    modal.innerHTML = createMarcupSignIn(theme);
     closeModalBtn();
     autorizationForm();
   }
@@ -105,7 +105,7 @@ function autorizationForm() {
   function signUpClick(evt) {
     evt.preventDefault();
     modal.innerHTML = '';
-    modal.innerHTML = createMarcupSignUp();
+    modal.innerHTML = createMarcupSignUp(themeSet());
     closeModalBtn();
     signUpForm();
   }
@@ -134,7 +134,7 @@ function autorizationForm() {
     form.reset();
     form.removeEventListener('submit', onSubmit);
     modal.innerHTML = '';
-    modal.classList.remove("selected")
+    modal.classList.remove('selected');
   }
 }
 function closeModalBtn() {
@@ -143,7 +143,14 @@ function closeModalBtn() {
   function onClose(evt) {
     evt.preventDefault();
     modal.innerHTML = '';
-    modal.classList.remove("selected")
+    modal.classList.remove('selected');
   }
 }
 
+function themeSet() {
+  let theme = localStorage.getItem('selectedMode');
+  if (!theme) {
+    theme = '';
+  }
+  return theme;
+}

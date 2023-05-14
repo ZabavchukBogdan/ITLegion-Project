@@ -1,5 +1,5 @@
 import axios from 'axios';
-import refs from './get-refs-shopping-list';
+import refs from './refs';
 import {
   markupBookForShoppingList,
   markupEmptyPage,

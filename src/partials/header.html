@@ -1,0 +1,86 @@
+<header class="header">
+  <div class="container header-wrapper">
+    <!-- ЛОГОТИП -->
+    <a
+      class="header__logo link"
+      href="./index.html"
+      aria-label="home page link"
+    >
+      <svg class="header__logo-icon" width="86" height="28">
+        <use href="./images/symbol-defs.svg#icon-logo"></use>
+      </svg>
+    </a>
+
+    <!-- МЕНЮ ДЛЯ  АВТОРИЗОВАНОГО  КОРИСТУВАЧА -->
+    <ul class="menu list">
+      <li><a class="menu__home link" href="./index.html">Home</a></li>
+      <li>
+        <a class="menu__shopping link" href="/src/shop-list.html"
+          >Shopping-list
+          <svg class="icon-cart" width="20" height="20">
+            <use href="./images/symbol-defs.svg#icon-shop"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <div class="header__group">
+      <div class="theme__switch-wrapper">
+        <label class="theme__switch">
+          <input type="checkbox" class="mode-switch" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <button
+        class="auth__modal-open auth__modal-open-js js_signup_btn"
+        type="button"
+      >
+        Sign up
+        <svg class="" width="20px" height="20px">
+          <use href="./images/symbol-defs.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+
+      <!-- User - Log out-->
+      <div class="authorised-btns__wrapper is-hidden">
+        <button class="btn-user user-btn-js" type="button">
+          <span class="fone-icon-user">
+            <svg class="icon-user" width="19px" height="19px">
+              <use href="./images/symbol-defs.svg#icon-user"></use>
+            </svg>
+          </span>
+          User
+          <svg class="icon-triangle-down" width="23px" height="26px">
+            <use href="./images/symbol-defs.svg#icon-arrow-down2"></use>
+          </svg>
+        </button>
+        <button
+          class="log-out-btn log-out-btn-js is-hidden js_logout_btn"
+          type="button"
+        >
+          Log out
+          <svg class="" width="20px" height="20px">
+            <use href="./images/symbol-defs.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+      <!--  -->
+
+      <!-- КНОПКА БУРГЕР МЕНЮ /ЗАКРИТТЯ  -->
+
+      <button
+        class="menu-toggle js-open-menu"
+        aria-label="open close burger menu"
+      >
+        <svg class="icon-burger" width="28" height="28">
+          <use
+            class="icon-href"
+            href="./images/symbol-defs.svg#icon-burger"
+          ></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="js_autorization_modal sign_modal_style"></div>
+</header>
