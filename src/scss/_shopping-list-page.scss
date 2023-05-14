@@ -10,6 +10,12 @@
   padding-bottom: 40px;
 }
 
+@media screen and (min-width: 1440px) {
+  .container-shopping-list {
+    padding-left: 40px;
+  }
+}
+
 .title-shopping-list {
   font-weight: 700;
   font-size: 32px;
