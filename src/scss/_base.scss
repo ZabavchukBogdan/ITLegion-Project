@@ -1,5 +1,5 @@
 body {
-    font-family: 'DM Sans bold', sans-serif;
+  font-family: 'DM Sans bold', sans-serif;
 }
 
 // скидання налаштувань браузера
@@ -10,73 +10,74 @@ h3,
 h4,
 p,
 ul {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 ul {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 
 input,
 textarea {
-    outline: none;
+  outline: none;
 }
 
 a,
 button {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 // базові параметри зображень
 img {
-    display: block;
-    max-width: auto;
-    height: auto;
+  display: block;
+  max-width: auto;
+  height: auto;
 }
 
 // приховування тексту
 .hiden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 // налаштування контейнерів
 @media screen and (min-width: 300px) {
-    .container {
-        display: flex;
-        flex-direction: row;
-        max-width: 375px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f6f6f6;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1440px;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
+  .container {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
