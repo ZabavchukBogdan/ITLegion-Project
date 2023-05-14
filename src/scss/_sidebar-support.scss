@@ -28,25 +28,25 @@
     }
 }
 
-// .support-head {
-//     margin-bottom: 40px;
-//     display: flex;
-//     gap: 12px;
-//     align-items: center;
-//     border: solid 1px tomato;
-// }
+.support-head {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    // border: solid 1px tomato;
+}
 
-// .support-title {
-//     font-size: 28px;
-//     line-height: calc(32 / 28);
-//     color: var(--dark-border-n-text-color);
-//     border: solid 1px tomato;
-// }
+.support-title {
+    font-size: 28px;
+    line-height: calc(32 / 28);
+    color: var(--dark-border-n-text-color);
+    // border: solid 1px tomato;
+}
 
-// .support-icon {
-//     // fill: #FFFFFF;
-//     border: solid 1px tomato;
-// }
+.support-icon {
+    fill: #FFFFFF;
+    // border: solid 1px tomato;
+}
 
 .swiper {
     height: 300px;
