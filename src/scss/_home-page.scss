@@ -28,8 +28,6 @@
     .container-main-gallery {
         padding-left: 40px;
 
-        // padding-left: 40px;
-
     }
 }
 
@@ -38,7 +36,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     row-gap: 40px;
-    
 }
 
 .gal-category:not(:last-child){
@@ -58,9 +55,10 @@
 
 @media screen and (min-width: 1440px) {
     .sidebar {
-        flex-basis: 380px;
+        // flex-basis: 356px;
         flex-direction: column;
         gap: 0;
+        width: 356px;
     }
 }
 
