@@ -13,4 +13,3 @@ import './js/markup-card-shopping-list';
 
 
 
-
