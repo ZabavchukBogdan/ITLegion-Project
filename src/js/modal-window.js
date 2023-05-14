@@ -15,7 +15,6 @@ function onClick(evt){
     const bookId = target.dataset.idbook ?? target.closest('div').dataset.idbook
     const data =  getBookById(bookId).
     then(data => createModal(data));
-  
     
 }
 function createModal(data){
