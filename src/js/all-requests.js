@@ -25,7 +25,6 @@
 import axios from 'axios';
 import { renderGallery, renderGalleryCat } from './render-main-gallery';
 import refs from './refs';
-
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 //  отримання даних по топовим книгам
@@ -49,6 +48,13 @@ export async function mainGalleryCategory(cat) {
     console.log(error);
   }
 }
+// отримання даних по id
+ export async function getBookById(bookId = ''){
+  const response = await axios.get(`${BASE_URL}${bookId}`);
+  return response.data;
+ }
+
+
 
 mainGallery();
 
