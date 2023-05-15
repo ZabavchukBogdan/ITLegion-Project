@@ -1,5 +1,6 @@
 body {
   font-family: 'DM Sans bold', sans-serif;
+  background-color: var(--primary-background-color);
 }
 
 // скидання налаштувань браузера
@@ -37,7 +38,6 @@ img {
   height: auto;
 }
 
-
 // приховування тексту
 .hiden {
   position: absolute;
@@ -55,7 +55,7 @@ img {
 
 // налаштування контейнерів
 @media screen and (min-width: 300px) {
- .container {
+  .container {
     display: flex;
     flex-direction: row;
     max-width: 375px;
@@ -63,7 +63,6 @@ img {
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #f6f6f6;
   }
 }
 

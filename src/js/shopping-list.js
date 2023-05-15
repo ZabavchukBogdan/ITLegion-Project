@@ -60,6 +60,11 @@ async function fetchSavedBooks() {
   const list = readBookListFromStorage();
   const requests = [];
 
+  if (!list.length) {
+    renderEmptyPage();
+    return;
+  }
+
   for (const bookId of list) {
     requests.push(
       axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
@@ -96,7 +101,7 @@ if (refs.listContainer) {
 
       const list = readBookListFromStorage();
 
-      if (list.length === 0) {
+      if (!list.length) {
         renderEmptyPage();
       }
     }
