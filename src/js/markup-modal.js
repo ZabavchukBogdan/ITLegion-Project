@@ -10,7 +10,7 @@ export function markupModalWindow({ book_image, author, description, title, buy_
   return `
     <div class="modal_book">
       <button class="modal_book-btn-close" type="button" data-modal-close>
-      <svg width="18" height="18">
+      <svg width="28" height="28">
       <use class="modal_book-svg" href="${close}#icon-x""></use>
     </svg>
       
@@ -19,8 +19,8 @@ export function markupModalWindow({ book_image, author, description, title, buy_
         <img class="modal_book-img" src="${book_image}" alt="${title}" />
         <div class="modal_book-info">
           <h2 class="modal_book-info-name">${title}</h2>
-          <p class="modal_book-info-author">${author}</p>
-          <p class="modal_book-info-descrip">${description}</p>
+          <p class="modal_book-info-author">${author || 'Coming soon'}</p>
+          <p class="modal_book-info-descrip">${description || 'Coming soon'}</p>
 
           <div class="modal_book-icons">
           <a href="${buy_links[0].url}" class="modal_book-one-icon" target="_blank">
@@ -56,9 +56,13 @@ export function markupModalWindow({ book_image, author, description, title, buy_
         </div>
         </div>
       </div>
-        <button class="modal_book-btn" type="button">
+        <button class="modal_book-btn js-modal_book-btn" type="button">
         ADD TO SHOPPING LIST
       </button>
+      <p class="modal_book-note js-modal_book-note" hidden>
+      Сongratulations! You have added the book to the shopping list. To delete,
+      press the button “Remove from the shopping list”.
+    </p>
     </div>
   `;
 }

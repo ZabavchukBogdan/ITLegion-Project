@@ -4,15 +4,21 @@ export function renderRowGallery(row) {
   return row
     .map(elem =>
       elem.title.length < 17
-        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a href="#">
-            <img class="js-target" src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/> 
+        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a class="overlay " href="#">
+            <img class="js-target" src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/>
+             <div class="overlay-field js-target">
+              <p class="overlay-text">QUICK VIEW</p>
+            </div> 
             <p class="book-name js-target" >${elem.title}</p>
             <p class="book-author js-target" >${elem.author}</p>
           </a></div>`
-        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a  href="#">
+        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a class="overlay " href="#">
             <img class="js-target" src="${elem.book_image}" alt="${
             elem.title
           }" height="256" loading="lazy"/> 
+           <div class="overlay-field js-target">
+              <p class="overlay-text">QUICK VIEW</p>
+            </div>
             <p class="book-name js-target" >${elem.title
               .split('')
               .slice(0, 17)
