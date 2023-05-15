@@ -10,6 +10,7 @@ import {
   createMarcupSignUp,
 } from './helpers/autorization/autorization-marcup.js';
 
+const mql = window.matchMedia('(min-width: 1024px)');
 const modal = document.querySelector('.js_autorization_modal');
 const mainBody = document.querySelector('body');
 
@@ -20,6 +21,7 @@ button.addEventListener('click', onBtnClick);
 function onBtnClick(evt) {
   evt.preventDefault();
   if (modal.classList.contains('burger')) {
+    mql.removeListener(handleScreenChange);
     modal.classList.toggle('burger');
     toggleBurger();
   }
@@ -157,10 +159,17 @@ function themeSet() {
 
 //////////////////////// Burger Menu
 const burgerMenuBtn = document.querySelector('.js-open-menu');
-
 burgerMenuBtn.addEventListener('click', onClickBurg);
+
 function onClickBurg(evt) {
   evt.preventDefault();
+  modal.classList.toggle('burger');
+  toggleBurger();
+  if (screenHandler()) {
+    return;
+  }
+  const home = document.querySelector('.menu__home').classList.value;
+  const shopping = document.querySelector('.menu__shopping').classList.value;
   const userName = localStorage.getItem('userName');
   const shopBasketUrl = new URL('../images/symbol-defs.svg', import.meta.url);
   const portraitUrl = new URL('../images/symbol-defs.svg', import.meta.url);
@@ -171,8 +180,6 @@ function onClickBurg(evt) {
   arrowRightIconUrl.hash = 'icon-arrow-right';
   portraitUrl.hash = 'icon-user';
   shopBasketUrl.hash = 'icon-shop';
-
-  modal.classList.toggle('burger');
   modal.innerHTML = '';
 
   if (modal.classList.contains('burger')) {
@@ -184,8 +191,8 @@ function onClickBurg(evt) {
       <p class="user-name">${userName}</p>
     </div>
     <div class="logout_links_box">
-      <a class="logout_home_link">HOME</a>
-      <a class="shop_logout_link"
+      <a class="${home} logout" href="./index.html">HOME</a>
+      <a class="${shopping} logout"  href="./shop-list.html"
         >SHOPING LIST
         <svg class="logout_svg-shop" width="20px" height="20px">
           <use
@@ -215,8 +222,6 @@ function onClickBurg(evt) {
       button.addEventListener('click', onBtnClick, { once: true });
     }
   }
-  // Приховування свг іконки
-  toggleBurger();
 }
 
 function toggleBurger() {
@@ -247,4 +252,19 @@ function onLogOut(evt) {
   modal.innerHTML = '';
   localStorage.setItem('autorized', false);
   localStorage.removeItem('userName');
+}
+
+function screenHandler() {
+  mql.addListener(handleScreenChange);
+
+  handleScreenChange(mql);
+}
+function handleScreenChange(evt) {
+  if (evt.matches) {
+    modal.classList.toggle('burger');
+    toggleBurger();
+    modal.innerHTML = '';
+    mql.removeListener(handleScreenChange);
+    return true;
+  }
 }

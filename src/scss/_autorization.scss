@@ -327,10 +327,7 @@
   .logout_links_box {
     display: flex;
     flex-direction: column;
-    margin-left: 129px;
-    @media screen and (min-width: 768px) {
-      margin-left: 354px;
-    }
+    margin: auto;
     width: 118px;
 
     font-weight: 700;
@@ -342,22 +339,27 @@
     color: #111111;
   }
 
-  .logout_home_link {
-    padding: 8px 16px;
+  .menu__home.logout {
     margin-bottom: 16px;
-
-    border-radius: 36px;
     width: 72px;
     height: 34px;
-    background-color: #eac645;
+
+    padding: 8px 16px;
+    border-radius: 36px;
+    color: #ffffff;
   }
 
-  .shop_logout_link {
+  .menu__shopping.logout {
     display: flex;
     align-items: center;
+    width: 150px;
+    height: 39px;
+
+    padding: 8px 16px;
+    border-radius: 36px;
+    color: #ffffff;
 
     font-weight: 500;
-    color: #ffffff;
     stroke: currentColor;
     fill: currentColor;
   }
