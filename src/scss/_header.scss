@@ -16,6 +16,10 @@
   }
 }
 
+.link {
+  color: var(--dark-header-bg-color);
+}
+
 //  ЛОГОТИП
 
 .header__logo {
@@ -375,6 +379,10 @@ input:checked + .slider:before {
 }
 
 ///body////
+.dark .container{
+  background-color: var(--dark-body-color);
+}
+
 body.dark,
 .dark .container-shopping-list {
   background-color: var(--dark-body-color);
@@ -441,6 +449,17 @@ body.dark,
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);
 }
+
+.dark .amazon-image-shopping-list{
+  filter: brightness(10);
+}
+.dark .modal-icon-amazon {
+filter: brightness(10);
+}
+.dark .modal_book-svg {
+  fill: #ffffff;
+}
+
 .drop-menu {
   display: flex;
   justify-content: center;
