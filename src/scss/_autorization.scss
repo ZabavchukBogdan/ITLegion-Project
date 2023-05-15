@@ -38,12 +38,25 @@
   justify-content: start;
   align-items: start;
 
-  background-image: url('../images/burg-menu-background.png'),
+  background-image: url('../images/burg-menu-background@1x.png'),
     radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-origin: border-box;
+}
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .sign_modal_style.burger {
+    background-image: url('../images/burg-menu-background@2x.png'),
+      radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-origin: border-box;
+  }
 }
 
 //Modal box
@@ -288,7 +301,7 @@
   .burger_logout_box {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 
     padding-bottom: 68px;
