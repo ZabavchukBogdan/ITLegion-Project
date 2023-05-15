@@ -7,3 +7,4 @@ import './js/autorization-modal';
 import './js/categories-list-markup';
 import './js/header';
 import './js/support-new';
+import './js/scroll-window';
