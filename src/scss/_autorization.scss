@@ -1,12 +1,14 @@
 // Modal window
-.sign_modal_style.selected {
+.stop-scrolling {
+  overflow: hidden;
+  height: 100%;
+}
+
+.sign_modal_style {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 99;
-
-  width: 100vw;
-  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -19,6 +21,29 @@
   letter-spacing: -0.01em;
 
   background: radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
+}
+
+.sign_modal_style.selected {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sign_modal_style.burger {
+  position: relative;
+  margin: auto;
+  height: 100vh;
+
+  padding: 40px 20px 20px;
+
+  justify-content: start;
+  align-items: start;
+
+  background-image: url('../images/burg-menu-background.png'),
+    radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-origin: border-box;
 }
 
 //Modal box
@@ -250,5 +275,95 @@
 
     font-size: 18px;
     line-height: 1.33;
+  }
+}
+
+// LOGOUT BTN STYLES
+@media screen and (max-width: 1023px) {
+  .auth__modal-open-burg {
+    display: flex;
+    gap: 4px;
+  }
+
+  .burger_logout_box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    padding-bottom: 68px;
+  }
+
+  .user-main {
+    display: flex;
+    margin-bottom: 126px;
+
+    gap: 9px;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  .logout_svg_name {
+    width: 37px;
+    height: 37px;
+    background-color: #f7f7f7;
+    border-radius: 50px;
+  }
+
+  .logout_links_box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 129px;
+    @media screen and (min-width: 768px) {
+      margin-left: 354px;
+    }
+    width: 118px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+
+    color: #111111;
+  }
+
+  .logout_home_link {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+
+    border-radius: 36px;
+    width: 72px;
+    height: 34px;
+    background-color: #eac645;
+  }
+
+  .shop_logout_link {
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+    color: #ffffff;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  .logout_svg-shop {
+    margin-left: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .js_logout_btn_burg.logout_btn_burg {
+    width: 118px;
+    padding: 14px 24px;
+    margin-top: auto;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    color: #111111;
+    background-color: #ffffff;
   }
 }
