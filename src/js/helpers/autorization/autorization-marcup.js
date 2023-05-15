@@ -1,7 +1,4 @@
 export function createMarcupSignUp(theme) {
-  if (!theme) {
-    theme = '';
-  }
   return `<div class="autorization-style ${theme}">
   <button class="autorization_close_btn">
     <svg viewBox="0 0 30 28" class="autorization_svg_close ${theme}" >
@@ -30,9 +27,6 @@ export function createMarcupSignUp(theme) {
   </div></div>`;
 }
 export function createMarcupSignIn(theme) {
-  if (!theme) {
-    theme = '';
-  }
   return `<div class="autorization-style ${theme}">
   <button class="autorization_close_btn">
   <svg viewBox="0 0 30 28" class="autorization_svg_close ${theme}" >
