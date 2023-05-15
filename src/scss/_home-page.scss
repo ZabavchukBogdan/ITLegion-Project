@@ -83,6 +83,7 @@
 @media screen and (min-width: 1440px) {
     .books__list {
         margin-bottom: 32px;
+        justify-content: space-between;
         gap: 25px;
     }
 }
