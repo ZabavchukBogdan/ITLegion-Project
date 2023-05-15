@@ -19,7 +19,17 @@ function readBookListFromStorage() {
   return [];
 }
 
-function addBookToList(id) {
+export function isBookInList(id) {
+  if (!id) {
+    return false;
+  }
+
+  const list = readBookListFromStorage();
+
+  return list.includes(id);
+}
+
+export function addBookToList(id) {
   if (!id) {
     return;
   }
@@ -32,19 +42,17 @@ function addBookToList(id) {
   }
 }
 
-function removeBookFromList(id, evt) {
-  const parentEl = evt.target.closest('div.wrapper-shopping-list');
-  parentEl.remove();
+export function removeBookFromList(id) {
+  if (!id) {
+    return;
+  }
 
   const list = readBookListFromStorage();
+
   if (list.includes(id)) {
     const idx = list.indexOf(id);
     list.splice(idx, 1);
     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
-  }
-
-  if (list.length === 0) {
-    renderEmptyPage();
   }
 }
 
@@ -62,7 +70,6 @@ async function fetchSavedBooks() {
 
   for (const res of responses) {
     const book = res.data;
-    console.log(book);
     renderBookById(book);
   }
 }
@@ -72,23 +79,26 @@ function renderEmptyPage() {
   refs.listContainer.innerHTML = markup;
 }
 
-fetchSavedBooks();
-
 function renderBookById(book) {
   const markup = markupBookForShoppingList(book);
   refs.listContainer.insertAdjacentHTML('afterbegin', markup);
 }
 
-export default { addBookToList };
-
 if (refs.listContainer) {
+  fetchSavedBooks();
+
   refs.listContainer.addEventListener('click', function (event) {
-    if (event.target.classList.contains('remove-from-shopping-list')) {
+    if (event.target.closest('.remove-from-shopping-list')) {
       removeBookFromList(event.target.dataset.bookId, event);
+
+      const parentEl = event.target.closest('div.wrapper-shopping-list');
+      parentEl.remove();
+
+      const list = readBookListFromStorage();
+
+      if (list.length === 0) {
+        renderEmptyPage();
+      }
     }
   });
-
-  // TODO: remove after development
-  addBookToList('643282b1e85766588626a080');
-  addBookToList('643282b1e85766588626a0ba');
 }
