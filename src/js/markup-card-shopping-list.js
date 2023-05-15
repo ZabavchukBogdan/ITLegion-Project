@@ -1,11 +1,6 @@
 const trashIconUrl = new URL('../images/symbol-defs.svg', import.meta.url);
 trashIconUrl.hash = 'icon-trash';
 
-const bookdeskIconUrl = new URL(
-  '../images/shop-bookdesk@1x.jpg',
-  import.meta.url
-);
-
 const amazonIcon = new URL('../images/amazon@1x.png', import.meta.url);
 const amazonIconRet = new URL(
   '../images/bookshops/amazon@2x.png',
@@ -103,12 +98,6 @@ export function markupBookForShoppingList({
 }
 
 export function markupEmptyPage() {
-  return `<p class="empty-shopping-list">This page is empty, add some books and proceed to order.</p>
-  <img
-    src="${bookdeskIconUrl}"
-    alt=""
-    class="image-empty-shopping-list"
-    width="200"
-    height="300"
-  />`;
+  return `<div class="empty-shopping-list"><p class="text-shopping-list">This page is empty, add some books and proceed to order.</p></div>
+  `;
 }
