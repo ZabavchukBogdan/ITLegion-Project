@@ -43,7 +43,6 @@ export function addBookToList(id) {
 }
 
 export function removeBookFromList(id) {
-  // console.log(id);
   if (!id) {
     return;
   }
@@ -98,9 +97,6 @@ if (refs.listContainer) {
       '.remove-from-shopping-list'
     );
     if (btnRemoveFromList) {
-      console.log(
-        event.target.closest('.remove-from-shopping-list').dataset.bookId
-      );
       removeBookFromList(btnRemoveFromList.dataset.bookId);
 
       const parentEl = event.target.closest('div.wrapper-shopping-list');
