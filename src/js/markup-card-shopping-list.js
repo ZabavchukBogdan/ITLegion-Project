@@ -6,28 +6,20 @@ const bookdeskIconUrl = new URL(
   import.meta.url
 );
 
-const amazonIcon = new URL(
-  '../images/bookshops/amazon@1x.png',
-  import.meta.url
-);
-
+const amazonIcon = new URL('../images/amazon@1x.png', import.meta.url);
 const amazonIconRet = new URL(
   '../images/bookshops/amazon@2x.png',
   import.meta.url
 );
-
 const appleIcon = new URL('../images/bookshops/apple@1x.png', import.meta.url);
-
 const appleIconRet = new URL(
   '../images/bookshops/apple@2x.png',
   import.meta.url
 );
-
 const booksIcon = new URL(
   '../images/bookshops/bookshop@1x.png',
   import.meta.url
 );
-
 const booksIconRet = new URL(
   '../images/bookshops/bookshop@2x.png',
   import.meta.url
@@ -51,11 +43,10 @@ export function markupBookForShoppingList({
     <h2 class="title-book-shopping-list">${title}</h2>
     <h3 class="category-book-shopping-list">${list_name}</h3>
     <p class="description-book-shopping-list">${
-      description ||
-      'In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past resurfaces as he gets to the know the family of his college sweetheart.'
+      description || 'Coming soon'
     }</p>
     <div class="bottom-wrapper-shopping-list">
-      <p class="author-book-shopping-list">${author}</p>
+      <p class="author-book-shopping-list">${author || 'Coming soon'}</p>
       <ul class="shops-shopping-list">
         <li>
           <a href="${

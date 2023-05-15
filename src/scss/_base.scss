@@ -37,6 +37,7 @@ img {
   height: auto;
 }
 
+
 // приховування тексту
 .hiden {
   position: absolute;
@@ -54,7 +55,7 @@ img {
 
 // налаштування контейнерів
 @media screen and (min-width: 300px) {
-  .container {
+ .container {
     display: flex;
     flex-direction: row;
     max-width: 375px;
