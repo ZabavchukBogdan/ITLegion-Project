@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import refs from './refs';
 import { markupModalWindow } from './markup-modal';
-import {getBookById} from './all-requests'
+import { getBookById } from './all-requests';
 import { addBookToList, removeBookFromList } from './shopping-list';
 
 refs.mainGalleryEl.addEventListener('click', onClick);
@@ -28,8 +28,9 @@ function createModal(data) {
         .element()
         .querySelector('.js-modal_book-btn')
         .addEventListener('click', e => {
-            const noteText = document.querySelector('.js-modal_book-note')
+          const noteText = document.querySelector('.js-modal_book-note');
           if (e.target.classList.contains('in-list')) {
+            e.target.textContent = 'REMOVE FROM SHOPPING LIST';
             removeBookFromList(data._id);
 
             e.target.classList.remove('in-list');

@@ -5,8 +5,18 @@ import apple2x from '../images/bookshops/apple@2x.png';
 import books1x from '../images/bookshops/bookshop@1x.png';
 import books2x from '../images/bookshops/bookshop@2x.png';
 import close from '../images/symbol-defs.svg';
+import { isBookInList } from './shopping-list';
 
-export function markupModalWindow({ book_image, author, description, title, buy_links }) {
+export function markupModalWindow({
+  _id,
+  book_image,
+  author,
+  description,
+  title,
+  buy_links,
+}) {
+  const isInList = isBookInList(_id);
+
   return `
     <div class="modal_book">
       <button class="modal_book-btn-close" type="button" data-modal-close>
@@ -23,7 +33,9 @@ export function markupModalWindow({ book_image, author, description, title, buy_
           <p class="modal_book-info-descrip">${description || 'Coming soon'}</p>
 
           <div class="modal_book-icons">
-          <a href="${buy_links[0].url}" class="modal_book-one-icon" target="_blank">
+          <a href="${
+            buy_links[0].url
+          }" class="modal_book-one-icon" target="_blank">
             <img
               srcset="${amazon1x} 1x, ${amazon2x} 2x"
               src="${amazon1x}"
@@ -33,7 +45,9 @@ export function markupModalWindow({ book_image, author, description, title, buy_
               height="19"
             />
           </a>
-          <a href="${buy_links[1].url}" class="modal_book-one-icon" target="_blank">
+          <a href="${
+            buy_links[1].url
+          }" class="modal_book-one-icon" target="_blank">
             <img
               srcset="${apple1x} 1x, ${apple2x} 2x"
               src="${apple1x}"
@@ -43,7 +57,9 @@ export function markupModalWindow({ book_image, author, description, title, buy_
               height="32"
             />
           </a>
-          <a href="${buy_links[4].url}" class="modal_book-one-icon" target="_blank">
+          <a href="${
+            buy_links[4].url
+          }" class="modal_book-one-icon" target="_blank">
             <img
               srcset="${books1x} 1x, ${books2x} 2x"
               src="${books1x}"
@@ -56,13 +72,16 @@ export function markupModalWindow({ book_image, author, description, title, buy_
         </div>
         </div>
       </div>
-        <button class="modal_book-btn js-modal_book-btn" type="button">
-        ADD TO SHOPPING LIST
+        <button class="modal_book-btn js-modal_book-btn ${
+          isInList ? 'in-list' : ''
+        }" type="button">
+        ${isInList ? 'REMOVE FROM SHOPPING LIST' : 'ADD TO SHOPPING LIST'}
       </button>
-      <p class="modal_book-note js-modal_book-note" hidden>
-      Сongratulations! You have added the book to the shopping list. To delete,
-      press the button “Remove from the shopping list”.
-    </p>
+
+      <p class="modal_book-note js-modal_book-note" ${isInList ? '' : 'hidden'}>
+        Сongratulations! You have added the book to the shopping list. To delete,
+        press the button “Remove from the shopping list”.
+      </p>
     </div>
   `;
 }
