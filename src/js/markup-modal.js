@@ -56,7 +56,7 @@ export function markupModalWindow({ book_image, author, description, title, buy_
         </div>
         </div>
       </div>
-        <button class="modal_book-btn" type="button">
+        <button class="modal_book-btn js-modal_book-btn" type="button">
         ADD TO SHOPPING LIST
       </button>
     </div>
