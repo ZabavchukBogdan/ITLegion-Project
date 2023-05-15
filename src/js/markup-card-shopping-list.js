@@ -1,15 +1,6 @@
 const trashIconUrl = new URL('../images/symbol-defs.svg', import.meta.url);
 trashIconUrl.hash = 'icon-trash';
 
-// const bookdeskIconUrl = new URL(
-//   '../images/shop-bookdesk@1x.jpg',
-//   import.meta.url
-// );
-// const bookdeskIconUrlRet = new URL(
-//   '../images/shop-bookdesk@2x.jpg',
-//   import.meta.url
-// );
-
 const amazonIcon = new URL('../images/amazon@1x.png', import.meta.url);
 const amazonIconRet = new URL(
   '../images/bookshops/amazon@2x.png',
