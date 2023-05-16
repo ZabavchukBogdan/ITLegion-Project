@@ -72,8 +72,6 @@
   }
 }
 
-
-
 .title-book-shopping-list {
   width: 144px;
   margin-bottom: 4px;
@@ -308,4 +306,106 @@
     width: 349px;
     height: 309px;
   }
+}
+
+.tui-pagination .tui-page-btn {
+  height: 38px;
+  width: 38px;
+  margin-right: 7px;
+  padding-top: 7px;
+
+  font-family: 'DM Sans Bold';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+  color: var(--light-border-n-text-color);
+  border: 1px solid var(--light-border-n-text-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#pagination .tui-first {
+  background-color: var(--light-border-n-text-color);
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 365px) {
+  .tui-pagination .tui-page-btn {
+    height: 34px;
+    width: 34px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tui-pagination .tui-page-btn {
+    height: 44px;
+    width: 44px;
+    margin-right: 10px;
+    padding-top: 10px;
+  }
+}
+
+.tui-pagination .tui-last-child {
+  margin-right: 0;
+}
+
+.tui-pagination .tui-is-selected {
+  background: var(--light-border-n-text-color);
+  border: 1px solid var(--light-border-n-text-color);
+  color: var(--light-header-bg-color);
+}
+
+.tui-pagination .tui-is-selected:hover {
+  background-color: var(--light-border-n-text-color);
+}
+
+.tui-pagination .tui-first-child.tui-is-selected {
+  border-left: none;
+}
+
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-first {
+  color: var(--light-header-secondary-color);
+  background-color: var(--light-border-n-text-color);
+}
+
+.tui-pagination .tui-first + .tui-prev {
+  margin-right: 14px;
+}
+
+@media screen and (max-width: 365px) {
+  .tui-pagination .tui-first + .tui-prev {
+    margin-right: 7px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tui-pagination .tui-first + .tui-prev {
+    margin-right: 24px;
+  }
+}
+
+.tui-pagination .tui-next,
+.tui-pagination .tui-next + .tui-last {
+  color: var(--light-nav-text-color);
+  background-color: var(--light-accent-color-2);
+}
+
+.tui-pagination .tui-next {
+  margin-left: 14px;
+}
+
+@media screen and (max-width: 365px) {
+  .tui-pagination .tui-next {
+    margin-left: 7px;
+  }
+}
+
+.tui-pagination .tui-next + .tui-last {
+  border: 1px solid var(--light-border-n-text-color);
+}
+
+.tui-pagination .tui-next + .tui-last:hover {
+  color: var(--light-border-n-text-color);
 }
