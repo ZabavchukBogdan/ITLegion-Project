@@ -1,9 +1,9 @@
-import amazon1x from '../images/bookshops/amazon@1x.png';
-import amazon2x from '../images/bookshops/amazon@2x.png';
-import apple1x from '../images/bookshops/apple@1x.png';
-import apple2x from '../images/bookshops/apple@2x.png';
-import books1x from '../images/bookshops/bookshop@1x.png';
-import books2x from '../images/bookshops/bookshop@2x.png';
+import amazon1x from '../images/amazon@1x.png';
+import amazon2x from '../images/amazon@2x.png';
+import apple1x from '../images/apple@1x.png';
+import apple2x from '../images/apple@2x.png';
+import books1x from '../images/books@1x.png';
+import books2x from '../images/books@2x.png';
 import close from '../images/symbol-defs.svg';
 import { isBookInList } from './shopping-list';
 
