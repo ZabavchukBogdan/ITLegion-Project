@@ -107,7 +107,6 @@
 
 .icon-burger {
   color: #111111;
-  // fill: #000000;
   stroke: currentColor;
   fill: currentColor;
 
@@ -388,10 +387,7 @@ input:checked + .slider:before {
   background-color: var(--dark-body-color);
 }
 
-// body.dark {
-//   background-color: var(--dark-body-color);
-//   color: rgba(255, 255, 255, 0.6);
-// }
+
 body.dark,
 .dark .container-shopping-list {
   background-color: var(--dark-body-color);
@@ -411,7 +407,7 @@ body.dark,
 .dark .auth__modal-close-icon,
 .dark .form__icon {
   color: var(--light-header-bg-color);
-  // fill: var(--light-header-bg-color);
+ 
   stroke: currentColor;
   fill: currentColor;
 }
@@ -419,7 +415,7 @@ body.dark,
 .dark .menu-toggle :hover,
 .dark.menu-toggle :focus {
   color: #eac645;
-  // fill: #eac645;
+ 
   stroke: currentColor;
   fill: currentColor;
 }

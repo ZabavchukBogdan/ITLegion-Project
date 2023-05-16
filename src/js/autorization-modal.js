@@ -340,7 +340,6 @@ function screenHandler() {
 }
 function handleScreenChange(evt) {
   if (evt.matches) {
-    console.log('matches');
     modal.classList.toggle('burger');
     toggleBurger();
     modal.innerHTML = '';
