@@ -470,6 +470,22 @@ body.dark,
   color: var(--light-header-bg-color);
 }
 
+
+
+.dark .tui-pagination .tui-is-selected {
+  color: var(--dark-header-bg-color);
+    border-color: var(--light-header-bg-color);
+    background: var(--light-header-bg-color);
+}
+
+.dark .tui-pagination .tui-last-child{
+  border-color: var(--light-header-bg-color);
+  color: var(--light-header-bg-color);
+}
+
+
+
+
 .drop-menu {
   display: flex;
   justify-content: center;
