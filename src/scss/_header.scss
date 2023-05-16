@@ -110,11 +110,15 @@
   // fill: #000000;
   stroke: currentColor;
   fill: currentColor;
+
+  transition: fill var(--transition-timing-function),
+    stroke var(--transition-timing-function);
 }
 
 .menu-toggle :hover,
 .menu-toggle :focus {
   fill: var(--light-accent-color);
+  stroke: var(--light-accent-color);
 }
 
 // ПЕРЕМИКАЧ ТЕМИ ТА  КНОПКИ  sign-up, user
@@ -420,12 +424,15 @@ body.dark,
   fill: currentColor;
 }
 
-.dark .menu__shopping.link,
+.dark .menu__shopping,
 .dark .menu__home,
 .dark .menu.list,
 .dark .category-title,
+.dark .title-shopping-list,
 .dark .book-name,
-.dark .button-see-more {
+.dark .button-see-more,
+.dark .title-book-shopping-list,
+.dark .description-book-shopping-list {
   color: var(--light-header-bg-color);
   transition: color var(--transition-timing-function);
 }
@@ -442,6 +449,11 @@ body.dark,
   color: #eac645;
 }
 
+
+.dark .wrapper-shopping-list {
+  background-color: var(--light-border-n-text-color);
+}
+
 .dark .amazon-image-shopping-list {
   filter: brightness(10);
 }
@@ -450,6 +462,12 @@ body.dark,
 }
 .dark .modal_book-svg {
   stroke: var(--light-header-bg-color);
+}
+
+.dark .autorization_psw,
+.dark .autorization_name,
+.dark .autorization_email {
+  color: var(--light-header-bg-color);
 }
 
 .drop-menu {

@@ -4,19 +4,19 @@ export function renderRowGallery(row) {
   return row
     .map(elem =>
       elem.title.length < 17
-        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a class="overlay" href="#">
+        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a class="overlay " href="#">
             <img class="js-target" src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/>
-             <div class="overlay-field">
+             <div class="overlay-field js-target">
               <p class="overlay-text">QUICK VIEW</p>
             </div> 
             <p class="book-name js-target" >${elem.title}</p>
             <p class="book-author js-target" >${elem.author}</p>
           </a></div>`
-        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a class="overlay" href="#">
+        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a class="overlay " href="#">
             <img class="js-target" src="${elem.book_image}" alt="${
             elem.title
           }" height="256" loading="lazy"/> 
-           <div class="overlay-field">
+           <div class="overlay-field js-target">
               <p class="overlay-text">QUICK VIEW</p>
             </div>
             <p class="book-name js-target" >${elem.title
@@ -29,7 +29,7 @@ export function renderRowGallery(row) {
     .join('');
 }
 
-// функція створення заголовку заголовку групи книг
+// функція створення заголовку  групи книг
 export function renderGalleryCat(books, cat) {
   refs.mainGalleryEl.innerHTML = '';
   let idx = Math.trunc(cat.split(' ').length / 2);
@@ -47,6 +47,7 @@ export function renderGalleryCat(books, cat) {
   refs.mainGalleryEl.insertAdjacentHTML('beforeend', markUp);
 }
 
+
 export function renderGallery(books) {
   refs.mainGalleryEl.classList.remove('gal-category');
   refs.mainGalleryTitleEl.innerHTML =
@@ -58,7 +59,7 @@ export function renderGallery(books) {
       window.innerWidth >= 1440
         ? `<div class="books-category">
           <p class="books-category-title">${elem.list_name}</p>
-          <ul">
+          <ul>
             <li class="books__list">${renderRowGallery(elem.books)}</li>
           </ul>
           <button class="button-see-more" type="button" data-cat="${
@@ -68,7 +69,7 @@ export function renderGallery(books) {
         : window.innerWidth >= 768
         ? `<div class="books-category">
           <p class="books-category-title">${elem.list_name}</p>
-          <ul">
+          <ul>
             <li class="books__list">${renderRowGallery(
               elem.books.slice(0, 3)
             )}</li>
@@ -79,7 +80,7 @@ export function renderGallery(books) {
         </div>`
         : `<div class="books-category">
           <p class="books-category-title">${elem.list_name}</p>
-          <ul">
+          <ul>
             <li class="books__list">${renderRowGallery(
               elem.books.slice(0, 1)
             )}</li>

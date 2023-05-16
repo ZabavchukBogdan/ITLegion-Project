@@ -60,6 +60,11 @@ async function fetchSavedBooks() {
   const list = readBookListFromStorage();
   const requests = [];
 
+  if (!list.length) {
+    renderEmptyPage();
+    return;
+  }
+
   for (const bookId of list) {
     requests.push(
       axios.get(`https://books-backend.p.goit.global/books/${bookId}`)
@@ -88,15 +93,18 @@ if (refs.listContainer) {
   fetchSavedBooks();
 
   refs.listContainer.addEventListener('click', function (event) {
-    if (event.target.closest('.remove-from-shopping-list')) {
-      removeBookFromList(event.target.dataset.bookId, event);
+    const btnRemoveFromList = event.target.closest(
+      '.remove-from-shopping-list'
+    );
+    if (btnRemoveFromList) {
+      removeBookFromList(btnRemoveFromList.dataset.bookId);
 
       const parentEl = event.target.closest('div.wrapper-shopping-list');
       parentEl.remove();
 
       const list = readBookListFromStorage();
 
-      if (list.length === 0) {
+      if (!list.length) {
         renderEmptyPage();
       }
     }

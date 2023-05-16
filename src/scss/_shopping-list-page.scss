@@ -8,6 +8,7 @@
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
+  flex: 1;
 }
 
 @media screen and (min-width: 1440px) {
@@ -23,7 +24,7 @@
   letter-spacing: -0.04em;
   margin-bottom: 40px;
 
-  color: #111111;
+  color: var(--light-border-n-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -34,39 +35,44 @@
 }
 
 .title-shopping-list span {
-  color: #4f2ee8;
+  color: var(--light-accent-color);
 }
 
 .wrapper-shopping-list {
   position: relative;
+  width: 335px;
   display: flex;
-  width: 996px;
   column-gap: 14px;
+  margin-bottom: 20px;
   padding: 14px;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
-  background-color: #ffffff;
+  background-color: var(--light-header-bg-color);
 }
 
 @media screen and (max-width: 365px) {
   .wrapper-shopping-list {
-    column-gap: 8px;
+    width: 280px;
     padding: 8px;
+    column-gap: 8px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .wrapper-shopping-list {
-    column-gap: 24px;
+    width: 704px;
     padding: 24px;
+    column-gap: 24px;
   }
 }
 
-.shopping-list {
-  display: flex;
-  row-gap: 20px;
-  flex-wrap: wrap;
+@media screen and (min-width: 1440px) {
+  .wrapper-shopping-list {
+    width: 996px;
+  }
 }
+
+
 
 .title-book-shopping-list {
   width: 144px;
@@ -79,7 +85,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #111111;
+  color: var(--light-border-n-text-color);
 }
 
 @media screen and (max-width: 365px) {
@@ -102,7 +108,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  color: #b4afaf;
+  color: var(--light-header-secondary-color);
 }
 
 @media screen and (max-width: 365px) {
@@ -125,7 +131,7 @@
   line-height: 1.29;
   letter-spacing: -0.04em;
 
-  color: #111111;
+  color: var(--light-border-n-text-color);
 
   overflow: hidden;
   display: -webkit-box;
@@ -145,7 +151,7 @@
 
   letter-spacing: -0.04em;
 
-  color: #b4afaf;
+  color: var(--light-header-secondary-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -169,7 +175,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4f2ee8;
+  background-color: var(--light-accent-color);
   border-radius: 50%;
   border: none;
 }
@@ -203,13 +209,23 @@
     bottom: 24px;
     right: 24px;
     column-gap: 16px;
-    filter: grayscale(1);
   }
+}
+
+.shop-item-shopping-list {
+  filter: grayscale(1);
+  transition: filter var(--transition-timing-function);
+}
+
+.shop-item-shopping-list:hover,
+.shop-item-shopping-list:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 }
 
 @media screen and (max-width: 767px) {
   .amazon-image-shopping-list {
     width: 32px;
+    height: 11px;
   }
 }
 
@@ -241,5 +257,55 @@
   .remove-icon {
     width: 18px;
     height: 18px;
+  }
+}
+
+.text-shopping-list {
+  margin: 0 auto;
+  font-family: 'DM Sans Regular';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .text-shopping-list {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+.empty-shopping-list {
+  display: block;
+  margin: 0 auto;
+  margin-top: 120px;
+  width: 265px;
+  height: 248px;
+  background-image: url(../images/shop-bookdesk@1x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 265px 198px;
+  @media screen and (min-width: 768px) {
+    background-size: 322px 241px;
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .js-back {
+    background-image: url(../images/shop-bookdesk@2x.png);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .empty-shopping-list {
+    margin-top: 140px;
+    width: 349px;
+    height: 309px;
   }
 }
