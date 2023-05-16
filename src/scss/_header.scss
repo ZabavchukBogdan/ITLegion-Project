@@ -158,6 +158,7 @@
 
   @media screen and (min-width: 1024px) {
     display: flex;
+    z-index: 1;
   }
 
   &.is-hidden {
@@ -448,6 +449,7 @@ body.dark,
   color: #eac645;
 }
 
+
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);
 }
@@ -461,6 +463,7 @@ body.dark,
 .dark .modal_book-svg {
   stroke: var(--light-header-bg-color);
 }
+
 .dark .autorization_psw,
 .dark .autorization_name,
 .dark .autorization_email {
