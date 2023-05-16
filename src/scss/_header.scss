@@ -107,14 +107,17 @@
 
 .icon-burger {
   color: #111111;
-  // fill: #000000;
   stroke: currentColor;
   fill: currentColor;
+
+  transition: fill var(--transition-timing-function),
+    stroke var(--transition-timing-function);
 }
 
 .menu-toggle :hover,
 .menu-toggle :focus {
   fill: var(--light-accent-color);
+  stroke: var(--light-accent-color);
 }
 
 // ПЕРЕМИКАЧ ТЕМИ ТА  КНОПКИ  sign-up, user
@@ -154,6 +157,7 @@
 
   @media screen and (min-width: 1024px) {
     display: flex;
+    z-index: 1;
   }
 
   &.is-hidden {
@@ -379,15 +383,11 @@ input:checked + .slider:before {
 
 ///body////
 
-
-.dark .container{
+.dark .container {
   background-color: var(--dark-body-color);
 }
 
-// body.dark {
-//   background-color: var(--dark-body-color);
-//   color: rgba(255, 255, 255, 0.6);
-// }
+
 body.dark,
 .dark .container-shopping-list {
   background-color: var(--dark-body-color);
@@ -407,7 +407,7 @@ body.dark,
 .dark .auth__modal-close-icon,
 .dark .form__icon {
   color: var(--light-header-bg-color);
-  // fill: var(--light-header-bg-color);
+ 
   stroke: currentColor;
   fill: currentColor;
 }
@@ -415,7 +415,7 @@ body.dark,
 .dark .menu-toggle :hover,
 .dark.menu-toggle :focus {
   color: #eac645;
-  // fill: #eac645;
+ 
   stroke: currentColor;
   fill: currentColor;
 }
@@ -432,7 +432,7 @@ body.dark,
   color: var(--light-header-bg-color);
   transition: color var(--transition-timing-function);
 }
-.dark .category-books__title+.category-books__author {
+.dark .category-books__title + .category-books__author {
   color: var(--dark-description-text);
   transition: color var(--transition-timing-function);
 }
@@ -445,24 +445,42 @@ body.dark,
   color: #eac645;
 }
 
+
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);
 }
 
-.dark .amazon-image-shopping-list{
+.dark .amazon-image-shopping-list {
   filter: brightness(10);
 }
 .dark .modal-icon-amazon {
-filter: brightness(10);
+  filter: brightness(10);
 }
 .dark .modal_book-svg {
   stroke: var(--light-header-bg-color);
 }
+
 .dark .autorization_psw,
 .dark .autorization_name,
 .dark .autorization_email {
   color: var(--light-header-bg-color);
 }
+
+
+
+.dark .tui-pagination .tui-is-selected {
+  color: var(--dark-header-bg-color);
+    border-color: var(--light-header-bg-color);
+    background: var(--light-header-bg-color);
+}
+
+.dark .tui-pagination .tui-last-child{
+  border-color: var(--light-header-bg-color);
+  color: var(--light-header-bg-color);
+}
+
+
+
 
 .drop-menu {
   display: flex;

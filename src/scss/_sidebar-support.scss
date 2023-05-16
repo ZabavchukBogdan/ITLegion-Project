@@ -11,13 +11,14 @@
   );
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
   border-radius: 16px;
+  margin-top: 40px;
+
 
   @media screen and (min-width: 768px) {
     max-width: none;
     width: 335px;
     height: 472px;
-    margin-top: 40px;
-
+  margin-top: 0px;
     padding: 24px 58px 14px 40px;
   }
 
@@ -110,16 +111,9 @@
   fill: var(--light-accent-color);
 }
 
-//------- HOVER ЗА БАЖАННЯМ
-
-// .support-btn:hover .support-btn-icon {
-//   fill: var(--light-header-bg-color);
-// }
-// .support-btn:hover {
-//   background-color: #806ae2;
-//   border: 2px solid var(--light-header-bg-color);
-// }
 
 .support-btn:hover {
   box-shadow: 0px 0px 10px 5px rgba(79, 46, 232, 1);
 }
+
+

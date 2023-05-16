@@ -2,23 +2,11 @@ const trashIconUrl = new URL('../images/symbol-defs.svg', import.meta.url);
 trashIconUrl.hash = 'icon-trash';
 
 const amazonIcon = new URL('../images/amazon@1x.png', import.meta.url);
-const amazonIconRet = new URL(
-  '../images/bookshops/amazon@2x.png',
-  import.meta.url
-);
-const appleIcon = new URL('../images/bookshops/apple@1x.png', import.meta.url);
-const appleIconRet = new URL(
-  '../images/bookshops/apple@2x.png',
-  import.meta.url
-);
-const booksIcon = new URL(
-  '../images/bookshops/bookshop@1x.png',
-  import.meta.url
-);
-const booksIconRet = new URL(
-  '../images/bookshops/bookshop@2x.png',
-  import.meta.url
-);
+const amazonIconRet = new URL('../images/amazon@2x.png', import.meta.url);
+const appleIcon = new URL('../images/apple@1x.png', import.meta.url);
+const appleIconRet = new URL('../images/apple@2x.png', import.meta.url);
+const booksIcon = new URL('../images/books@1x.png', import.meta.url);
+const booksIconRet = new URL('../images/books@2x.png', import.meta.url);
 
 export function markupBookForShoppingList({
   _id,
