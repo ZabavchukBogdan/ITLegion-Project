@@ -12,7 +12,7 @@ function onClick(evt) {
   if (!target.classList.contains('js-target')) {
     return;
   }
-  const bookId = target.dataset.idbook ?? target.closest('div').dataset.idbook;
+  const bookId = target.dataset.idbook ?? target.closest('.book-card-wrapper').dataset.idbook;
   const data = getBookById(bookId).then(data => createModal(data));
 }
 function createModal(data) {

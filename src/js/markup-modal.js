@@ -29,8 +29,8 @@ export function markupModalWindow({
         <img class="modal_book-img" src="${book_image}" alt="${title}" />
         <div class="modal_book-info">
           <h2 class="modal_book-info-name">${title}</h2>
-          <p class="modal_book-info-author">${author}</p>
-          <p class="modal_book-info-descrip">${description}</p>
+          <p class="modal_book-info-author">${author || 'Coming soon'}</p>
+          <p class="modal_book-info-descrip">${description || 'Coming soon'}</p>
 
           <div class="modal_book-icons">
           <a href="${

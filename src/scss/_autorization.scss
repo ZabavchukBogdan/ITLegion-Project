@@ -38,12 +38,25 @@
   justify-content: start;
   align-items: start;
 
-  background-image: url('../images/burg-menu-background.png'),
+  background-image: url('../images/burg-menu-background@1x.png'),
     radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-origin: border-box;
+}
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .sign_modal_style.burger {
+    background-image: url('../images/burg-menu-background@2x.png'),
+      radial-gradient(circle at 0% 0%, #ccece7 -80%, #4f2ee8 60%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-origin: border-box;
+  }
 }
 
 //Modal box
@@ -117,6 +130,7 @@
 }
 
 .form-autorization-style.dark input {
+  color: #f6f6f6;
   background-color: #202024;
   border-color: #f6f6f6;
 }
@@ -288,7 +302,7 @@
   .burger_logout_box {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 
     padding-bottom: 68px;
@@ -313,10 +327,7 @@
   .logout_links_box {
     display: flex;
     flex-direction: column;
-    margin-left: 129px;
-    @media screen and (min-width: 768px) {
-      margin-left: 354px;
-    }
+    margin: auto;
     width: 118px;
 
     font-weight: 700;
@@ -328,22 +339,27 @@
     color: #111111;
   }
 
-  .logout_home_link {
-    padding: 8px 16px;
+  .menu__home.logout {
     margin-bottom: 16px;
-
-    border-radius: 36px;
     width: 72px;
     height: 34px;
-    background-color: #eac645;
+
+    padding: 8px 16px;
+    border-radius: 36px;
+    color: #ffffff;
   }
 
-  .shop_logout_link {
+  .menu__shopping.logout {
     display: flex;
     align-items: center;
+    width: 150px;
+    height: 39px;
+
+    padding: 8px 16px;
+    border-radius: 36px;
+    color: #ffffff;
 
     font-weight: 500;
-    color: #ffffff;
     stroke: currentColor;
     fill: currentColor;
   }
@@ -367,3 +383,4 @@
     background-color: #ffffff;
   }
 }
+

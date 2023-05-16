@@ -6,7 +6,7 @@ export function createMarcupSignUp(theme) {
     </svg>
   </button>
   <form action="submit" class="js_form_signup form-autorization-style ${theme}">
-  <input placeholder="NAME" type="text"/>
+  <input placeholder="NAME" class="autorization_name" type="text"/>
   <div class="autorization_svg_box">
   <input placeholder="EMAIL" class="autorization_email" type="email"/>
     <svg viewBox="0 0 32 28" class="autorization_svg_mail ${theme}">
@@ -34,7 +34,7 @@ export function createMarcupSignIn(theme) {
   </svg>
   </button>
     <form action="submit" class="js_form_autorization form-autorization-style selected  ${theme}">
-        <input placeholder="NAME/EMAIL" type="text"/>
+        <input placeholder="NAME/EMAIL" class="autorization_name" type="text"/>
         <div class="autorization_svg_box">
         <input placeholder="PASSWORD" class="autorization_psw" type="text" />
         <svg viewBox="0 0 32 28" class="autorization_svg_psw ${theme}" >

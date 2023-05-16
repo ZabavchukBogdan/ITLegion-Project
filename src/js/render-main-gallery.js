@@ -4,19 +4,19 @@ export function renderRowGallery(row) {
   return row
     .map(elem =>
       elem.title.length < 17
-        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a class="overlay" href="#">
+        ? `<div class="book-card-wrapper js-target" data-idbook="${elem._id}"><a class="overlay " href="#">
             <img class="js-target" src="${elem.book_image}" alt="${elem.title}" height="256" loading="lazy"/>
-             <div class="overlay-field">
+             <div class="overlay-field js-target">
               <p class="overlay-text">QUICK VIEW</p>
             </div> 
             <p class="book-name js-target" >${elem.title}</p>
             <p class="book-author js-target" >${elem.author}</p>
           </a></div>`
-        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a class="overlay" href="#">
+        : `<div class="book-card-wrapper js-target"  data-idbook="${elem._id}"><a class="overlay " href="#">
             <img class="js-target" src="${elem.book_image}" alt="${
             elem.title
           }" height="256" loading="lazy"/> 
-           <div class="overlay-field">
+           <div class="overlay-field js-target">
               <p class="overlay-text">QUICK VIEW</p>
             </div>
             <p class="book-name js-target" >${elem.title
@@ -29,7 +29,7 @@ export function renderRowGallery(row) {
     .join('');
 }
 
-// функція створення заголовку заголовку групи книг
+// функція створення заголовку  групи книг
 export function renderGalleryCat(books, cat) {
   refs.mainGalleryEl.innerHTML = '';
   let idx = Math.trunc(cat.split(' ').length / 2);
@@ -46,6 +46,7 @@ export function renderGalleryCat(books, cat) {
   refs.mainGalleryEl.classList.add('gal-category');
   refs.mainGalleryEl.insertAdjacentHTML('beforeend', markUp);
 }
+
 
 export function renderGallery(books) {
   refs.mainGalleryEl.classList.remove('gal-category');
