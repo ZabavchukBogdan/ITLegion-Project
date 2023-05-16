@@ -7,7 +7,7 @@ import {
 
 const SHOPPING_LIST_KEY = 'shopping_list';
 
-function readBookListFromStorage() {
+export function readBookListFromStorage() {
   const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
 
   if (listVal) {
@@ -56,8 +56,9 @@ export function removeBookFromList(id) {
   }
 }
 
-async function fetchSavedBooks() {
-  const list = readBookListFromStorage();
+export async function fetchSavedBooks(ids) {
+  refs.listContainer.innerHTML = '';
+  const list = ids || readBookListFromStorage();
   const requests = [];
 
   if (!list.length) {
@@ -79,7 +80,7 @@ async function fetchSavedBooks() {
   }
 }
 
-function renderEmptyPage() {
+export function renderEmptyPage() {
   const markup = markupEmptyPage();
   refs.listContainer.innerHTML = markup;
 }
@@ -90,8 +91,6 @@ function renderBookById(book) {
 }
 
 if (refs.listContainer) {
-  fetchSavedBooks();
-
   refs.listContainer.addEventListener('click', function (event) {
     const btnRemoveFromList = event.target.closest(
       '.remove-from-shopping-list'

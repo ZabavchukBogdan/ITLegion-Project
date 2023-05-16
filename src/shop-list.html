@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
-    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"
+    />
     <link rel="stylesheet" href="./scss/index.scss" />
   </head>
   <body>
@@ -22,9 +26,15 @@
           <div class="swiper">
             <ul class="support__list-js swiper-wrapper"></ul>
           </div>
-          <button class="support-btn swiper-button swiper-button-next" type="button" aria-label="swipe list down button">
+          <button
+            class="support-btn swiper-button swiper-button-next"
+            type="button"
+            aria-label="swipe list down button"
+          >
             <svg class="support-btn-icon" width="38" height="38">
-              <use href="./images/symbol-defs.svg#icon-arrow-down-support"></use>
+              <use
+                href="./images/symbol-defs.svg#icon-arrow-down-support"
+              ></use>
             </svg>
           </button>
         </section>
@@ -32,9 +42,9 @@
       <div class="container-shopping-list">
         <h1 class="title-shopping-list">Shopping <span>List</span></h1>
         <ul class="shopping-list"></ul>
+        <div id="pagination" class="tui-pagination"></div>
       </div>
     </main>
-    <div id="pagination" class="tui-pagination"></div>
     <script type="module" src="./shop.js"></script>
   </body>
 </html>
