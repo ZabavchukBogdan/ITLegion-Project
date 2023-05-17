@@ -16,22 +16,25 @@ const logOutList = document.querySelector('.logout_list_js');
 const button = document.querySelector('.js_signup_btn');
 const mql = window.matchMedia('(min-width: 1024px)');
 
+const menuList = document.querySelector('.menu_link_list');
+
 //  кнопка створення форми авторизації
 ifAutorized();
 
 function ifAutorized() {
   if (localStorage.getItem('autorized') === 'true') {
     button.removeEventListener('click', onBtnClick);
+    menuList.classList.remove('is-hidden');
+    button.classList.add('selected');
+
     const userName = localStorage.getItem('userName');
     const portraitUrl = new URL('../images/symbol-defs.svg', import.meta.url);
     portraitUrl.hash = 'icon-user';
-    button.style.gap = 'unset';
-    button.style.justifyContent = 'space-between';
 
     button.innerHTML = '';
     button.innerHTML = `
    
-    <svg class="logout_svg_name" width="37px" height="37px">
+    <svg class="logout_svg_name" viewBox="-3 3 38 32" width="37px" height="37px">
     <path fill="#f6f6f6" style="fill: var(--color2, #f6f6f6)" d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
     </svg>  
     <p class="user-name">${userName}</p>
@@ -42,8 +45,8 @@ function ifAutorized() {
     `;
     button.addEventListener('click', logOutEvent);
   } else {
-    button.style.gap = '90px';
-    button.style.justifyContent = 'center';
+    menuList.classList.add('is-hidden');
+    button.classList.remove('selected');
     button.removeEventListener('click', logOutEvent);
     button.addEventListener('click', onBtnClick);
   }
@@ -51,6 +54,7 @@ function ifAutorized() {
 
 function logOutEvent(evt) {
   evt.preventDefault();
+
   if (logOutList.classList.contains('logout')) {
     logOutList.classList.toggle('logout');
     logOutList.children[0].removeEventListener('click', onLogOut);
@@ -193,7 +197,9 @@ function autorizationForm() {
       return;
     }
     if ((nickname = checkUserProp(name, psw))) {
-      Notify.success('Авторизація успішна');
+      Notify.success('Авторизація успішна', {
+        timeout: 1000,
+      });
     } else {
       Notify.info("Невірно введені ім'я або пароль");
       return;
@@ -206,6 +212,7 @@ function autorizationForm() {
     modal.innerHTML = '';
     mainBody.classList.remove('stop-scrolling');
     modal.classList.remove('selected');
+
     ifAutorized();
   }
 }
@@ -315,6 +322,7 @@ function toggleBurger() {
 
 function onLogOut(evt) {
   evt.preventDefault();
+  menuList.classList.add('is-hidden');
   if (modal.classList.contains('burger')) {
     modal.classList.toggle('burger');
     toggleBurger();
