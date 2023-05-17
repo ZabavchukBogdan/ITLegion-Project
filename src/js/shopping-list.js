@@ -5,8 +5,8 @@ import {
   markupEmptyPage,
 } from './markup-card-shopping-list';
 import Pagination from 'tui-pagination';
-import { fetchSavedBooks, readBookListFromStorage } from './shopping-list';
-import refs from './refs';
+
+
 
 function getPaginationOptions() {
   const list = readBookListFromStorage();
