@@ -98,4 +98,4 @@ export function renderGallery(books) {
 
   refs.mainGalleryEl.insertAdjacentHTML('beforeend', markUp);
 }
-   window.addEventListener('resize', debounce(() => { mainGallery(); }, 100));
+   window.addEventListener('resize', debounce(() => { mainGallery(); }, 50));

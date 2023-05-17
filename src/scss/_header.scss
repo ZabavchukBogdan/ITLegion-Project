@@ -466,7 +466,6 @@ body.dark,
   color: #eac645;
 }
 
-
 .dark .footer {
   border: 1.5px solid var(--light-header-bg-color);
   background: var(--dark-body-color);
@@ -494,16 +493,7 @@ body.dark,
   color: var(--light-header-bg-color);
 }
 
-.dark .tui-pagination .tui-is-selected {
-  color: var(--dark-header-bg-color);
-  border-color: var(--light-header-bg-color);
-  background: var(--light-header-bg-color);
-}
 
-.dark .tui-pagination .tui-last-child {
-  border-color: var(--light-header-bg-color);
-  color: var(--light-header-bg-color);
-}
 
 .drop-menu {
   display: flex;
@@ -528,3 +518,42 @@ body.dark,
     pointer-events: none;
   }
 }
+
+
+ .dark #pagination .tui-page-btn {
+   background-color: #202024;
+   border: 1px solid var(--light-header-bg-color);
+   color: var(--light-header-bg-color);
+
+   &.tui-first,
+   &.tui-prev,
+   &.tui-next,
+   &.tui-last {
+     border-color: #000000;
+     background-color: #eac645;
+   }
+
+   &.tui-is-disabled {
+     background-color: #000000;
+   }
+ }
+
+ .dark #pagination .tui-next {
+   background-color: #eac645;
+ }
+
+ .dark #pagination .tui-last {
+   background-color: #eac645;
+ }
+
+ .dark #pagination .tui-is-selected,
+ .tui-pagination strong {
+   background-color: var(--light-header-bg-color);
+   color: #000000;
+ }
+
+
+
+ .dark .text-shopping-list {
+  color: rgba(255, 255, 255, 0.6);
+ }
