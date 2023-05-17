@@ -168,6 +168,27 @@
   }
 }
 
+.auth__modal-open.selected {
+  gap: unset;
+  justify-content: unset;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.31;
+  letter-spacing: -0.02em;
+}
+
+.auth__modal-open.selected p {
+  margin-left: 9px;
+  margin-right: auto;
+}
+
+.auth__modal-open.selected .logout_svg_name {
+  background-color: #b1adad;
+
+  border-radius: 50;
+}
+
 .logout-btn-style:focus,
 .logout-btn-style:hover,
 .auth__modal-open-burg:focus,
@@ -387,7 +408,6 @@ input:checked + .slider:before {
   background-color: var(--dark-body-color);
 }
 
-
 body.dark,
 .dark .container-shopping-list {
   background-color: var(--dark-body-color);
@@ -407,7 +427,7 @@ body.dark,
 .dark .auth__modal-close-icon,
 .dark .form__icon {
   color: var(--light-header-bg-color);
- 
+
   stroke: currentColor;
   fill: currentColor;
 }
@@ -415,7 +435,7 @@ body.dark,
 .dark .menu-toggle :hover,
 .dark.menu-toggle :focus {
   color: #eac645;
- 
+
   stroke: currentColor;
   fill: currentColor;
 }
@@ -445,7 +465,6 @@ body.dark,
   color: #eac645;
 }
 
-
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);
 }
@@ -466,21 +485,16 @@ body.dark,
   color: var(--light-header-bg-color);
 }
 
-
-
 .dark .tui-pagination .tui-is-selected {
   color: var(--dark-header-bg-color);
-    border-color: var(--light-header-bg-color);
-    background: var(--light-header-bg-color);
+  border-color: var(--light-header-bg-color);
+  background: var(--light-header-bg-color);
 }
 
-.dark .tui-pagination .tui-last-child{
+.dark .tui-pagination .tui-last-child {
   border-color: var(--light-header-bg-color);
   color: var(--light-header-bg-color);
 }
-
-
-
 
 .drop-menu {
   display: flex;
