@@ -1,4 +1,3 @@
-import debounce from 'lodash.debounce';
 import axios from 'axios';
 import { renderGallery, renderGalleryCat } from './render-main-gallery';
 import refs from './refs';
@@ -51,4 +50,3 @@ export async function getCategoriesList() {
 
 
 
-window.addEventListener('resize', debounce(() => { mainGallery(); }, 100));
