@@ -4,11 +4,25 @@ import {
   markupBookForShoppingList,
   markupEmptyPage,
 } from './markup-card-shopping-list';
+import Pagination from 'tui-pagination';
+import { fetchSavedBooks, readBookListFromStorage } from './shopping-list';
+import refs from './refs';
 
-const SHOPPING_LIST_KEY = 'shopping_list';
+function getPaginationOptions() {
+  const list = readBookListFromStorage();
+  const booksPerPage = window.screen.width >= 768 ? 3 : 4;
+  const visiblePagesBtn = window.screen.width >= 768 ? 3 : 2;
+
+  return {
+    totalItems: list.length,
+    itemsPerPage: booksPerPage,
+    visiblePages: visiblePagesBtn,
+    page: 1,
+  };
+}
 
 export function readBookListFromStorage() {
-  const listVal = localStorage.getItem(SHOPPING_LIST_KEY);
+  const listVal = localStorage.getItem('shopping_list');
 
   if (listVal) {
     try {
@@ -38,7 +52,7 @@ export function addBookToList(id) {
 
   if (!list.includes(id)) {
     list.push(id);
-    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+    localStorage.setItem('shopping_list', JSON.stringify(list));
   }
 }
 
@@ -52,7 +66,7 @@ export function removeBookFromList(id) {
   if (list.includes(id)) {
     const idx = list.indexOf(id);
     list.splice(idx, 1);
-    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(list));
+    localStorage.setItem('shopping_list', JSON.stringify(list));
   }
 }
 
@@ -90,7 +104,29 @@ function renderBookById(book) {
   refs.listContainer.insertAdjacentHTML('afterbegin', markup);
 }
 
+function togglePagination(isVisible) {
+  refs.paginationEl.style.display = isVisible ? 'block' : 'none';
+}
+
 if (refs.listContainer) {
+  const options = getPaginationOptions();
+  const pagination = new Pagination('pagination', options);
+
+  pagination.on('beforeMove', async evt => {
+    const list = readBookListFromStorage();
+    const itemCount = options.itemsPerPage;
+    const shift = itemCount * (evt.page - 1);
+    const items = list.slice(shift, shift + itemCount);
+
+    await fetchSavedBooks(items);
+  });
+
+  pagination.events.beforeMove[0].handler({ page: 1 });
+
+  const list = readBookListFromStorage();
+
+  togglePagination(!!list.length);
+
   refs.listContainer.addEventListener('click', function (event) {
     const btnRemoveFromList = event.target.closest(
       '.remove-from-shopping-list'
@@ -103,8 +139,14 @@ if (refs.listContainer) {
 
       const list = readBookListFromStorage();
 
-      if (!list.length) {
+      if (list.length) {
+        const currPage = pagination.getCurrentPage();
+
+        pagination.reset(list.length);
+        pagination.movePageTo(pagination.getCurrentPage());
+      } else {
         renderEmptyPage();
+        togglePagination(false);
       }
     }
   });
