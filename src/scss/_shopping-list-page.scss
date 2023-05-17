@@ -308,6 +308,10 @@
   }
 }
 
+.tui-pagination {
+  margin-top: 40px;
+}
+
 .tui-pagination .tui-page-btn {
   height: 38px;
   width: 38px;
@@ -322,6 +326,8 @@
   border: 1px solid var(--light-border-n-text-color);
   border-radius: 50%;
   cursor: pointer;
+
+ justify-content: center;
 }
 
 #pagination .tui-first {

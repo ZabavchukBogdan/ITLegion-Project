@@ -10,13 +10,87 @@ import {
   createMarcupSignUp,
 } from './helpers/autorization/autorization-marcup.js';
 
-const mql = window.matchMedia('(min-width: 1024px)');
-const modal = document.querySelector('.js_autorization_modal');
 const mainBody = document.querySelector('body');
+const modal = document.querySelector('.js_autorization_modal');
+const logOutList = document.querySelector('.logout_list_js');
+const button = document.querySelector('.js_signup_btn');
+const mql = window.matchMedia('(min-width: 1024px)');
+
+const menuList = document.querySelector('.menu_link_list');
 
 //  кнопка створення форми авторизації
-const button = document.querySelector('.js_signup_btn');
-button.addEventListener('click', onBtnClick);
+ifAutorized();
+
+function ifAutorized() {
+  if (localStorage.getItem('autorized') === 'true') {
+    button.removeEventListener('click', onBtnClick);
+    menuList.classList.remove('is-hidden');
+    button.classList.add('selected');
+
+    const userName = localStorage.getItem('userName');
+    const portraitUrl = new URL('../images/symbol-defs.svg', import.meta.url);
+    portraitUrl.hash = 'icon-user';
+
+    button.innerHTML = '';
+    button.innerHTML = `
+   
+    <svg class="logout_svg_name" viewBox="-3 3 38 32" width="37px" height="37px">
+    <path fill="#f6f6f6" style="fill: var(--color2, #f6f6f6)" d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
+    </svg>  
+    <p class="user-name">${userName}</p>
+    <svg viewBox="0 0 80 32" class="logout_svg_arrow"  width="23px" height="26px">
+    <path fill="#fff" style="fill: var(--color1, #fff)" d="M3.168 3h53.667l-24.123 27.27c-0.719 0.812-1.694 1.269-2.71 1.269s-1.991-0.456-2.71-1.269l-24.123-27.27z"></path>
+    </svg>  
+
+    `;
+    button.addEventListener('click', logOutEvent);
+  } else {
+    menuList.classList.add('is-hidden');
+    button.classList.remove('selected');
+    button.removeEventListener('click', logOutEvent);
+    button.addEventListener('click', onBtnClick);
+  }
+}
+
+function logOutEvent(evt) {
+  evt.preventDefault();
+
+  if (logOutList.classList.contains('logout')) {
+    logOutList.classList.toggle('logout');
+    logOutList.children[0].removeEventListener('click', onLogOut);
+    logOutList.innerHTML = '';
+    return;
+  }
+  logOutList.classList.toggle('logout');
+  const arrowRightIconUrl = new URL(
+    '../images/symbol-defs.svg',
+    import.meta.url
+  );
+  arrowRightIconUrl.hash = 'icon-arrow-right';
+  logOutList.innerHTML = `<button type="button" class="js_logout_btn_burg auth__modal-open-burg logout_btn">
+    Log out   
+    <svg class="logout_svg" width="20px" height="20px">
+    <use href="${arrowRightIconUrl}"></use>
+    </svg>    
+    </button>`;
+
+  const logoutEvt = document.querySelector('.js_logout_btn_burg');
+  logoutEvt.addEventListener('click', onClick, { once: true });
+
+  function onClick(evt) {
+    onLogOut(evt);
+    ifAutorized();
+    const buttonUrl = new URL('../images/symbol-defs.svg', import.meta.url);
+    buttonUrl.hash = 'icon-arrow-right';
+
+    button.innerHTML = `
+    Sign up
+    <svg class="" width="20px" height="20px">
+      <use href="${buttonUrl}"></use>
+    </svg>
+  </button>`;
+  }
+}
 
 function onBtnClick(evt) {
   evt.preventDefault();
@@ -123,7 +197,9 @@ function autorizationForm() {
       return;
     }
     if ((nickname = checkUserProp(name, psw))) {
-      Notify.success('Авторизація успішна');
+      Notify.success('Авторизація успішна', {
+        timeout: 1000,
+      });
     } else {
       Notify.info("Невірно введені ім'я або пароль");
       return;
@@ -136,6 +212,8 @@ function autorizationForm() {
     modal.innerHTML = '';
     mainBody.classList.remove('stop-scrolling');
     modal.classList.remove('selected');
+
+    ifAutorized();
   }
 }
 function closeModalBtn() {
@@ -171,8 +249,8 @@ function onClickBurg(evt) {
   const home = document.querySelector('.menu__home').classList.value;
   const shopping = document.querySelector('.menu__shopping').classList.value;
   const userName = localStorage.getItem('userName');
-  const shopBasketUrl = new URL('../images/symbol-defs.svg', import.meta.url);
   const portraitUrl = new URL('../images/symbol-defs.svg', import.meta.url);
+  const shopBasketUrl = new URL('../images/symbol-defs.svg', import.meta.url);
   const arrowRightIconUrl = new URL(
     '../images/symbol-defs.svg',
     import.meta.url
@@ -244,9 +322,18 @@ function toggleBurger() {
 
 function onLogOut(evt) {
   evt.preventDefault();
+  menuList.classList.add('is-hidden');
   if (modal.classList.contains('burger')) {
     modal.classList.toggle('burger');
     toggleBurger();
+  }
+
+  if (logOutList.classList.contains('logout')) {
+    logOutList.classList.toggle('logout');
+    logOutList.innerHTML = '';
+    localStorage.setItem('autorized', false);
+    localStorage.removeItem('userName');
+    return;
   }
 
   modal.innerHTML = '';

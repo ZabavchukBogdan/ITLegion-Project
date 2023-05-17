@@ -45,6 +45,37 @@
   background-position-y: bottom;
   background-origin: border-box;
 }
+
+.logout_list_style.logout {
+  position: absolute;
+  right: 32px;
+  bottom: -40px;
+  z-index: auto;
+
+  display: flex;
+
+  align-items: end;
+
+  width: 184px;
+  height: 68px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(0, 0, 0, 0) 20%,
+    #4f2ee8 40%,
+    #4f2ee8 60%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    right: 24px;
+    bottom: -48px;
+    height: 76px;
+  }
+}
+
 @media screen and (min-device-pixel-ratio: 2),
   screen and (-webkit-min-device-pixel-ratio: 2),
   screen and (min-resolution: 192dpi),
@@ -317,13 +348,6 @@
     color: #ffffff;
   }
 
-  .logout_svg_name {
-    width: 37px;
-    height: 37px;
-    background-color: #f7f7f7;
-    border-radius: 50px;
-  }
-
   .logout_links_box {
     display: flex;
     flex-direction: column;
@@ -383,4 +407,3 @@
     background-color: #ffffff;
   }
 }
-

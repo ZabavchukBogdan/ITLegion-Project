@@ -98,7 +98,7 @@ supportListEl.innerHTML = markupSetFunds;
 
 const swiper = new Swiper('.swiper', {
   direction: 'vertical',
-  spaceBetween: 20,
+  spaceBetween: 16,
   slidesPerView: 'auto',
   rewind: true,
 

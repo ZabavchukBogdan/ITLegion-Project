@@ -5,6 +5,13 @@
     padding-bottom: 72px;
 }
 
+@media screen and (min-width: 1440px) {
+    .main {
+        padding-top: 40px;
+        padding-left: 40px;
+    }
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -24,12 +31,7 @@
     padding-top: 0px;
 }
 
-@media screen and (min-width: 1440px) {
-    .container-main-gallery {
-        padding-left: 40px;
 
-    }
-}
 
 .gal-category {
     flex-direction: row;
@@ -38,16 +40,19 @@
     row-gap: 40px;
 }
 
-.gal-category:not(:last-child){
+.gal-category:not(:last-child) {
     column-gap: 24px;
 }
 
 .sidebar {
     width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 @media screen and (min-width: 768px) {
     .sidebar {
+        padding-bottom: 100px;
         display: flex;
         gap: 32px;
     }
@@ -55,16 +60,22 @@
 
 @media screen and (min-width: 1440px) {
     .sidebar {
+        flex-basis: 380px;
         flex-direction: column;
         gap: 0;
-        width: 356px;
     }
 }
 
 .categories {
-    padding-top: 40px;
     width: 100%;
-    height: 475px;
+    height: 228px;
+}
+
+@media screen and (min-width: 768px) {
+    .categories {
+        width: 100%;
+        height: 475px;
+    }
 }
 
 .books__list {
@@ -76,15 +87,14 @@
     .books__list {
         margin-bottom: 20px;
         justify-content: space-between;
-        gap: 25px;
+        gap: 24px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .books__list {
         margin-bottom: 32px;
-        justify-content: space-between;
-        gap: 25px;
+        gap: 24px;
     }
 }
 
@@ -106,7 +116,7 @@
 .book-card-wrapper {
     width: 335px;
     height: 535px;
-    
+
 }
 
 .book-card-wrapper img {
@@ -140,7 +150,6 @@
 }
 
 .category-title {
-    padding-top: 40px;
     padding-left: 40px;
     padding-bottom: 40px;
     font-weight: 700;
@@ -233,7 +242,6 @@
 
 // Секція список категорій
 .categories-list {
-    width: 336px;
     max-height: 228px;
     overflow-y: scroll;
 }
@@ -336,7 +344,6 @@
     background: #eac645;
     border-radius: 0px 0px 8px 8px;
     opacity: 0;
-
     opacity: 0;
     transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -344,6 +351,7 @@
 .overlay {
     position: relative;
     overflow: hidden;
+
 }
 
 .overlay-text {
@@ -354,6 +362,9 @@
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--dark-header-bg-color);
+
+    text-align: center;
+    justify-content: center;
 
     opacity: 0;
     transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);

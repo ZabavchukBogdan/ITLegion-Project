@@ -4,9 +4,9 @@ export function similarProp(name, email) {
     return false;
   }
   const arr = Object.values({ obj });
-  for (value in arr[0]) {
-    const val = arr[0][value];
-    if (val.name === name || val.email === email) {
+  for (let value in arr[0]) {
+    const item = arr[0][value];
+    if (item.name === name || item.email === email) {
       return true;
     }
   }
@@ -19,11 +19,11 @@ export function checkUserProp(name, psw) {
   }
   const arr = Object.values({ obj });
 
-  for (value in arr[0]) {
-    const val = arr[0][value];
-    if (val.name === name || val.email === name) {
-      if (val.password === psw) {
-        return val.name;
+  for (let value in arr[0]) {
+    const res = arr[0][value];
+    if (res.name === name || res.email === name) {
+      if (res.password === psw) {
+        return res.name;
       }
     }
   }

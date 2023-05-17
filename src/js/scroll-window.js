@@ -1,6 +1,5 @@
 const scrollButton = document.querySelector('.scrollup-button');
 scrollButton.addEventListener('click', onScrollUp);
-console.dir(scrollButton);
 scrollButton.hidden = true;
 
 window.addEventListener('scroll', () => {
@@ -10,7 +9,7 @@ window.addEventListener('scroll', () => {
     scrollButton.hidden = true;
   }
 });
-console.dir(document);
+
 
 function onScrollUp() {
   window.scrollTo({
