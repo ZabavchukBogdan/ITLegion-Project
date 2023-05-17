@@ -14,7 +14,7 @@ export function createMarcupSignUp(theme) {
     </svg>
   </div>
   <div class="autorization_svg_box">
-  <input placeholder="PASSWORD" class="autorization_psw" type="text" />
+  <input placeholder="PASSWORD" class="autorization_psw" type="password" />
     <svg viewBox="0 0 32 28" class="autorization_svg_psw ${theme}" >
     <path fill="none" stroke="#111111" style="stroke: var(--color, #111111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 14.667v-4c0-3.682-2.985-6.667-6.667-6.667s-6.667 2.985-6.667 6.667v4M10.4 28h11.2c2.24 0 3.36 0 4.216-0.436 0.753-0.384 1.364-0.996 1.748-1.748 0.436-0.856 0.436-1.976 0.436-4.216v-0.533c0-2.24 0-3.36-0.436-4.216-0.384-0.753-0.996-1.365-1.748-1.748-0.856-0.436-1.976-0.436-4.216-0.436h-11.2c-2.24 0-3.36 0-4.216 0.436-0.753 0.383-1.365 0.995-1.748 1.748-0.436 0.856-0.436 1.976-0.436 4.216v0.533c0 2.24 0 3.36 0.436 4.216 0.383 0.753 0.995 1.364 1.748 1.748 0.856 0.436 1.976 0.436 4.216 0.436z"></path>
     </svg>
@@ -36,7 +36,7 @@ export function createMarcupSignIn(theme) {
     <form action="submit" class="js_form_autorization form-autorization-style selected  ${theme}">
         <input placeholder="NAME/EMAIL" class="autorization_name" type="text"/>
         <div class="autorization_svg_box">
-        <input placeholder="PASSWORD" class="autorization_psw" type="text" />
+        <input placeholder="PASSWORD" class="autorization_psw" type="password" />
         <svg viewBox="0 0 32 28" class="autorization_svg_psw ${theme}" >
         <path fill="none" stroke="#111111" style="stroke: var(--color, #111111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 14.667v-4c0-3.682-2.985-6.667-6.667-6.667s-6.667 2.985-6.667 6.667v4M10.4 28h11.2c2.24 0 3.36 0 4.216-0.436 0.753-0.384 1.364-0.996 1.748-1.748 0.436-0.856 0.436-1.976 0.436-4.216v-0.533c0-2.24 0-3.36-0.436-4.216-0.384-0.753-0.996-1.365-1.748-1.748-0.856-0.436-1.976-0.436-4.216-0.436h-11.2c-2.24 0-3.36 0-4.216 0.436-0.753 0.383-1.365 0.995-1.748 1.748-0.436 0.856-0.436 1.976-0.436 4.216v0.533c0 2.24 0 3.36 0.436 4.216 0.383 0.753 0.995 1.364 1.748 1.748 0.856 0.436 1.976 0.436 4.216 0.436z"></path>
         </svg>
