@@ -387,7 +387,6 @@ input:checked + .slider:before {
   background-color: var(--dark-body-color);
 }
 
-
 body.dark,
 .dark .container-shopping-list {
   background-color: var(--dark-body-color);
@@ -407,7 +406,7 @@ body.dark,
 .dark .auth__modal-close-icon,
 .dark .form__icon {
   color: var(--light-header-bg-color);
- 
+
   stroke: currentColor;
   fill: currentColor;
 }
@@ -415,7 +414,7 @@ body.dark,
 .dark .menu-toggle :hover,
 .dark.menu-toggle :focus {
   color: #eac645;
- 
+
   stroke: currentColor;
   fill: currentColor;
 }
@@ -423,6 +422,7 @@ body.dark,
 .dark .menu__shopping,
 .dark .menu__home,
 .dark .menu.list,
+.dark .logo-link,
 .dark .category-title,
 .dark .title-shopping-list,
 .dark .book-name,
@@ -445,6 +445,10 @@ body.dark,
   color: #eac645;
 }
 
+.dark .footer {
+  border: 1.5px solid var(--light-header-bg-color);
+  background: var(--dark-body-color);
+}
 
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);
@@ -466,21 +470,16 @@ body.dark,
   color: var(--light-header-bg-color);
 }
 
-
-
 .dark .tui-pagination .tui-is-selected {
   color: var(--dark-header-bg-color);
-    border-color: var(--light-header-bg-color);
-    background: var(--light-header-bg-color);
+  border-color: var(--light-header-bg-color);
+  background: var(--light-header-bg-color);
 }
 
-.dark .tui-pagination .tui-last-child{
+.dark .tui-pagination .tui-last-child {
   border-color: var(--light-header-bg-color);
   color: var(--light-header-bg-color);
 }
-
-
-
 
 .drop-menu {
   display: flex;
