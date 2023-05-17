@@ -327,6 +327,8 @@ function toggleBurger() {
 function onLogOut(evt) {
   evt.preventDefault();
   menuList.classList.add('is-hidden');
+  localStorage.removeItem('shopping_list');
+  window.location.replace('./index.html');
   if (modal.classList.contains('burger')) {
     modal.classList.toggle('burger');
     toggleBurger();
