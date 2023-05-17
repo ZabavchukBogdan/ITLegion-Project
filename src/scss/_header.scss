@@ -168,6 +168,27 @@
   }
 }
 
+.auth__modal-open.selected {
+  gap: unset;
+  justify-content: unset;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.31;
+  letter-spacing: -0.02em;
+}
+
+.auth__modal-open.selected p {
+  margin-left: 9px;
+  margin-right: auto;
+}
+
+.auth__modal-open.selected .logout_svg_name {
+  background-color: #b1adad;
+
+  border-radius: 50;
+}
+
 .logout-btn-style:focus,
 .logout-btn-style:hover,
 .auth__modal-open-burg:focus,
@@ -445,10 +466,13 @@ body.dark,
   color: #eac645;
 }
 
+
 .dark .footer {
   border: 1.5px solid var(--light-header-bg-color);
   background: var(--dark-body-color);
 }
+
+
 
 .dark .wrapper-shopping-list {
   background-color: var(--light-border-n-text-color);

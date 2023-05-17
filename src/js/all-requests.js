@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { renderGallery, renderGalleryCat } from './render-main-gallery';
 import refs from './refs';
@@ -48,3 +47,6 @@ function onBtnSeeMoreCategory(evt) {
 export async function getCategoriesList() {
   return await axios.get(`${BASE_URL}category-list`);
 }
+
+
+

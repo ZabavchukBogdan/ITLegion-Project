@@ -1,4 +1,8 @@
 import refs from './refs';
+import { mainGallery } from './all-requests';
+import debounce from 'lodash.debounce';
+
+
 
 export function renderRowGallery(row) {
   return row
@@ -94,3 +98,4 @@ export function renderGallery(books) {
 
   refs.mainGalleryEl.insertAdjacentHTML('beforeend', markUp);
 }
+   window.addEventListener('resize', debounce(() => { mainGallery(); }, 100));
