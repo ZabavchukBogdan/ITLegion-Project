@@ -15,6 +15,7 @@ const modal = document.querySelector('.js_autorization_modal');
 const logOutList = document.querySelector('.logout_list_js');
 const button = document.querySelector('.js_signup_btn');
 const mql = window.matchMedia('(min-width: 1024px)');
+const mqlMax = window.matchMedia('(max-width: 1024px)');
 
 const menuList = document.querySelector('.menu_link_list');
 
@@ -32,8 +33,7 @@ function ifAutorized() {
     portraitUrl.hash = 'icon-user';
 
     button.innerHTML = '';
-    button.innerHTML = `
-   
+    button.innerHTML = `   
     <svg class="logout_svg_name" viewBox="-3 3 38 32" width="37px" height="37px">
     <path fill="#f6f6f6" style="fill: var(--color2, #f6f6f6)" d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
     </svg>  
@@ -41,7 +41,6 @@ function ifAutorized() {
     <svg viewBox="0 0 80 32" class="logout_svg_arrow"  width="23px" height="26px">
     <path fill="#fff" style="fill: var(--color1, #fff)" d="M3.168 3h53.667l-24.123 27.27c-0.719 0.812-1.694 1.269-2.71 1.269s-1.991-0.456-2.71-1.269l-24.123-27.27z"></path>
     </svg>  
-
     `;
     button.addEventListener('click', logOutEvent);
   } else {
@@ -59,8 +58,13 @@ function logOutEvent(evt) {
     logOutList.classList.toggle('logout');
     logOutList.children[0].removeEventListener('click', onLogOut);
     logOutList.innerHTML = '';
+    mqlMax.removeListener(handleScreenChange);
     return;
   }
+
+  mqlMax.addListener(handleScreenChange);
+
+  handleScreenChange(mqlMax);
   logOutList.classList.toggle('logout');
   const arrowRightIconUrl = new URL(
     '../images/symbol-defs.svg',
@@ -103,8 +107,8 @@ function onBtnClick(evt) {
   mainBody.classList.add('stop-scrolling');
   modal.classList.add('selected');
   modal.innerHTML = createMarcupSignUp(themeSet());
-  closeModalBtn();
   signUpForm();
+  closeModalBtn();
 }
 
 ///////////////
@@ -125,11 +129,10 @@ function signUpForm() {
 
   function signInClick(evt) {
     evt.preventDefault();
-    const theme = themeSet();
     modal.innerHTML = '';
-    modal.innerHTML = createMarcupSignIn(theme);
-    closeModalBtn();
+    modal.innerHTML = createMarcupSignIn(themeSet());
     autorizationForm();
+    closeModalBtn();
   }
 
   function onSubmit(evt) {
@@ -158,8 +161,9 @@ function signUpForm() {
 
     // Створення/Перехід до форми авторизації
     modal.innerHTML = '';
-    modal.innerHTML = createMarcupSignIn();
+    modal.innerHTML = createMarcupSignIn(themeSet());
     autorizationForm();
+    closeModalBtn();
   }
 }
 
@@ -180,8 +184,8 @@ function autorizationForm() {
     evt.preventDefault();
     modal.innerHTML = '';
     modal.innerHTML = createMarcupSignUp(themeSet());
-    closeModalBtn();
     signUpForm();
+    closeModalBtn();
   }
 
   function onSubmit(evt) {
@@ -323,6 +327,8 @@ function toggleBurger() {
 function onLogOut(evt) {
   evt.preventDefault();
   menuList.classList.add('is-hidden');
+  localStorage.removeItem('shopping_list');
+  window.location.replace('./index.html');
   if (modal.classList.contains('burger')) {
     modal.classList.toggle('burger');
     toggleBurger();
@@ -333,6 +339,7 @@ function onLogOut(evt) {
     logOutList.innerHTML = '';
     localStorage.setItem('autorized', false);
     localStorage.removeItem('userName');
+    mqlMax.removeListener(handleScreenChange);
     return;
   }
 
@@ -348,6 +355,13 @@ function screenHandler() {
 }
 function handleScreenChange(evt) {
   if (evt.matches) {
+    if (logOutList.classList.contains('logout')) {
+      logOutList.classList.toggle('logout');
+      logOutList.children[0].removeEventListener('click', onLogOut);
+      logOutList.innerHTML = '';
+      mqlMax.removeListener(handleScreenChange);
+      return true;
+    }
     modal.classList.toggle('burger');
     toggleBurger();
     modal.innerHTML = '';
